@@ -1,0 +1,71 @@
+<div class="engineering-page">
+  <!-- Banner with Photo Media Frame -->
+  <section class="page-banner cyan-theme">
+    <div class="axiol-container banner-grid">
+      <div class="banner-text">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-compass-drafting"></i> Design Led Execution</span>
+        <h1>ENGINEERING BEFORE EQUIPMENT</h1>
+        <p class="lead-text">
+          Good infrastructure begins with a sound engineering design basis. Axiol’s consulting services help clients define project parameters before procurement locks in risk and cost.
+        </p>
+        <div class="banner-highlights">
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Power System Modeling & Simulations</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> FEED & Technical Audits</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Grid Code Interconnection Assurance</span>
+        </div>
+      </div>
+
+      <div class="banner-media">
+        <div class="media-frame-card">
+          <img src="assets/images/engineering-consulting.png" alt="Axiol Power Systems Engineering Consulting" onerror="this.src='https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80'">
+          <div class="media-caption">
+            <span class="badge"><i class="fa-solid fa-microchip"></i> Engineering Discipline</span>
+            <span class="title">System Modeling, ETAP Load Flow & Protection Selectivity</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Power System Studies Showcase -->
+  <section class="section-studies">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-microchip"></i> System Modeling & Simulation</span>
+        <h2>POWER SYSTEM AND INTERCONNECTION STUDIES</h2>
+        <p>Advanced digital twin modeling to guarantee statutory grid code compliance and asset longevity.</p>
+      </div>
+
+      <div class="grid-3">
+        @for (study of dataService.engineeringStudies; track study.name) {
+          <div class="study-photo-card">
+            <span class="type-tag" [ngClass]="study.type.toLowerCase()">{{ study.type }}</span>
+            <h3>{{ study.name }}</h3>
+            <p>{{ study.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Consulting Services Grid -->
+  <section class="section-services-grid">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-briefcase"></i> Consulting Scope</span>
+        <h2>ENGINEERING AND ADVISORY SERVICES</h2>
+        <p>Supporting project developers, lenders, utilities, and industrial asset owners.</p>
+      </div>
+
+      <div class="grid-4">
+        @for (srv of consultingServices; track srv.title) {
+          <div class="srv-photo-card">
+            <div class="icon-circle"><i class="fa-solid fa-compass-drafting"></i></div>
+            <h3>{{ srv.title }}</h3>
+            <p>{{ srv.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>

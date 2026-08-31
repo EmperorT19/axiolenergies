@@ -1,0 +1,75 @@
+<div class="training-page">
+  <!-- Banner with Photo Media Frame -->
+  <section class="page-banner cyan-theme">
+    <div class="axiol-container banner-grid">
+      <div class="banner-text">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-graduation-cap"></i> Human Capital Development</span>
+        <h1>TRAINING AND CAPACITY BUILDING</h1>
+        <p class="lead-text">
+          Infrastructure performs best when operators, engineers, and technicians understand how to run, maintain, and protect it safely.
+        </p>
+        <div class="banner-highlights">
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Solar PV & BESS Commissioning</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> High Voltage Safety Protocols</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> OEM Technical Certification</span>
+        </div>
+      </div>
+
+      <div class="banner-media">
+        <div class="media-frame-card">
+          <img src="assets/images/technical-training.png" alt="Axiol Human Capacity Building Facility" onerror="this.src='https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=800&q=80'">
+          <div class="media-caption">
+            <span class="badge"><i class="fa-solid fa-user-graduate"></i> Technical Academy</span>
+            <span class="title">Practical Field Engineering, High Voltage Safety & OEM Certification</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Matrix Grid -->
+  <section class="section-programs">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-book-open"></i> Curricula Portfolio</span>
+        <h2>TRAINING PROGRAMMES</h2>
+        <p>Comprehensive technical and safety modules engineered for field excellence.</p>
+      </div>
+
+      <div class="grid-3">
+        @for (prog of dataService.capacityPrograms; track prog.title) {
+          <div class="prog-photo-card">
+            <div class="p-icon"><i class="fa-solid" [ngClass]="prog.icon"></i></div>
+            <h3>{{ prog.title }}</h3>
+            <p>{{ prog.description }}</p>
+            <div class="audience-tags">
+              @for (aud of prog.targetAudience; track aud) {
+                <span class="a-tag">{{ aud }}</span>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Target Audiences Section -->
+  <section class="section-audiences">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-users"></i> Participant Profiles</span>
+        <h2>WHO WE TRAIN</h2>
+      </div>
+
+      <div class="grid-4">
+        @for (aud of targetAudiences; track aud.title) {
+          <div class="aud-photo-card">
+            <div class="aud-icon"><i class="fa-solid" [ngClass]="aud.icon"></i></div>
+            <h3>{{ aud.title }}</h3>
+            <p>{{ aud.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>

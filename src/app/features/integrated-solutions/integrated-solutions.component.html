@@ -1,0 +1,52 @@
+<div class="solutions-page">
+  <!-- Banner -->
+  <section class="page-banner emerald-theme">
+    <div class="axiol-container">
+      <span class="axiol-badge emerald"><i class="fa-solid fa-layer-group"></i> Multitechnology Architecture</span>
+      <h1>INTEGRATED CLIENT SOLUTIONS</h1>
+      <p class="lead-text">
+        Combining solar, battery storage, conventional fuel generation and grid management to deliver tailored energy systems.
+      </p>
+    </div>
+  </section>
+
+  <!-- Solutions Grid -->
+  <section class="section-sol-grid">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge"><i class="fa-solid fa-diagram-project"></i> Core Configurations</span>
+        <h2>INTEGRATED SYSTEM ARCHITECTURES</h2>
+      </div>
+
+      <div class="grid-3">
+        @for (sol of dataService.integratedSolutions; track sol.title) {
+          <div class="axiol-card sol-card">
+            <div class="sol-icon"><i class="fa-solid" [ngClass]="sol.icon"></i></div>
+            <h3>{{ sol.title }}</h3>
+            <p>{{ sol.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Sector Applications -->
+  <section class="section-sectors">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge azure"><i class="fa-solid fa-city"></i> Multisector Delivery</span>
+        <h2>TARGET SECTOR APPLICATIONS</h2>
+      </div>
+
+      <div class="grid-4">
+        @for (sec of sectors; track sec.name) {
+          <div class="axiol-card sec-card">
+            <div class="sec-icon"><i class="fa-solid" [ngClass]="sec.icon"></i></div>
+            <h3>{{ sec.name }}</h3>
+            <p>{{ sec.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,378 @@
+/* src/styles.scss */
+:root {
+  --bg-dark-obsidian: #0A1510;
+  --bg-dark-card: #12241C;
+  --bg-dark-card-hover: #1A3328;
+  --bg-dark-surface: #0E1E17;
+  --accent-emerald: #40916C;
+  --accent-emerald-glow: rgba(64, 145, 108, 0.28);
+  --accent-sprout: #74C69D;
+  --accent-azure: #2A9D8F;
+  --accent-azure-glow: rgba(42, 157, 143, 0.25);
+  --accent-amber: #E67E22;
+  --accent-amber-glow: rgba(230, 126, 34, 0.28);
+  --accent-cyan: #52B788;
+  --text-main: #F4F6F0;
+  --text-sub: #B7C9B0;
+  --text-muted: #7A9375;
+  --glass-bg: rgba(18, 36, 28, 0.75);
+  --glass-border: rgba(116, 198, 157, 0.15);
+  --glass-border-hover: rgba(230, 126, 34, 0.4);
+  --glass-blur: blur(20px);
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-full: 9999px;
+  --shadow-card: 0 15px 35px -10px rgba(5, 14, 10, 0.6);
+  --shadow-glow: 0 0 30px rgba(64, 145, 108, 0.2);
+  --font-heading:
+    "Outfit",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  --font-body:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  height: 100%;
+}
+body {
+  background-color: var(--bg-dark-obsidian);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(64, 145, 108, 0.08) 0%,
+      transparent 40%),
+    radial-gradient(
+      circle at 85% 60%,
+      rgba(230, 126, 34, 0.07) 0%,
+      transparent 40%);
+  background-attachment: fixed;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark-obsidian);
+}
+::-webkit-scrollbar-thumb {
+  background: #1C382B;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--bg-dark-obsidian);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-amber);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #F8FAF6;
+  letter-spacing: -0.01em;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+ul {
+  list-style: none;
+}
+.axiol-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.axiol-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: rgba(116, 198, 157, 0.12);
+  color: var(--accent-sprout);
+  border: 1px solid rgba(116, 198, 157, 0.3);
+  backdrop-filter: var(--glass-blur);
+}
+.axiol-badge i {
+  font-size: 0.8rem;
+  color: var(--accent-sprout);
+}
+.axiol-badge.azure {
+  background: rgba(42, 157, 143, 0.12);
+  color: #48CAE4;
+  border-color: rgba(42, 157, 143, 0.3);
+}
+.axiol-badge.azure i {
+  color: #48CAE4;
+}
+.axiol-badge.amber {
+  background: rgba(230, 126, 34, 0.14);
+  color: #F39C12;
+  border-color: rgba(230, 126, 34, 0.3);
+}
+.axiol-badge.amber i {
+  color: #F39C12;
+}
+.axiol-badge.cyan {
+  background: rgba(82, 183, 136, 0.14);
+  color: var(--accent-cyan);
+  border-color: rgba(82, 183, 136, 0.3);
+}
+.axiol-badge.cyan i {
+  color: var(--accent-cyan);
+}
+.axiol-section-title {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 3.5rem auto;
+}
+.axiol-section-title .axiol-badge {
+  margin-bottom: 1.1rem;
+}
+.axiol-section-title h2 {
+  font-size: clamp(2.1rem, 4vw, 2.85rem);
+  margin-bottom: 1.1rem;
+  letter-spacing: -0.02em;
+  background:
+    linear-gradient(
+      135deg,
+      #FFFFFF 20%,
+      #D8E6D3 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.axiol-section-title p {
+  font-size: 1.12rem;
+  color: var(--text-sub);
+  line-height: 1.65;
+}
+.axiol-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 2.2rem;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.axiol-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--accent-sprout),
+      var(--accent-amber),
+      transparent);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.axiol-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 20px 40px -10px rgba(5, 14, 10, 0.8), 0 0 25px rgba(230, 126, 34, 0.15);
+}
+.axiol-card:hover::before {
+  opacity: 1;
+}
+.axiol-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.9rem 1.9rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.96rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  white-space: nowrap;
+}
+.axiol-btn.btn-primary {
+  background:
+    linear-gradient(
+      135deg,
+      #2D6A4F,
+      #1B4332);
+  color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(45, 106, 79, 0.4);
+  border: 1px solid rgba(116, 198, 157, 0.3);
+}
+.axiol-btn.btn-primary:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #40916C,
+      #2D6A4F);
+  box-shadow: 0 8px 25px rgba(64, 145, 108, 0.55);
+  transform: translateY(-2px);
+  color: #FFFFFF;
+}
+.axiol-btn.btn-amber {
+  background:
+    linear-gradient(
+      135deg,
+      #D97706,
+      #B45309);
+  color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+}
+.axiol-btn.btn-amber:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #F59E0B,
+      #D97706);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.55);
+}
+.axiol-btn.btn-outline {
+  background: rgba(18, 36, 28, 0.6);
+  color: var(--text-main);
+  border: 1px solid rgba(116, 198, 157, 0.25);
+}
+.axiol-btn.btn-outline:hover {
+  border-color: var(--accent-amber);
+  color: #F59E0B;
+  background: rgba(230, 126, 34, 0.1);
+  transform: translateY(-2px);
+}
+.axiol-btn.btn-sm {
+  padding: 0.55rem 1.25rem;
+  font-size: 0.86rem;
+}
+.axiol-input {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border-radius: var(--radius-sm);
+  background: rgba(10, 21, 16, 0.8);
+  border: 1px solid rgba(116, 198, 157, 0.2);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+.axiol-input:focus {
+  outline: none;
+  border-color: var(--accent-sprout);
+  box-shadow: 0 0 15px rgba(116, 198, 157, 0.25);
+  background: rgba(18, 36, 28, 0.9);
+}
+.axiol-input::placeholder {
+  color: var(--text-muted);
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 992px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
+}
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 1024px) {
+  .grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .grid-5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.grid-6 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 1024px) {
+  .grid-6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .grid-6 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* angular:styles/global:styles */
+/*# sourceMappingURL=styles.css.map */

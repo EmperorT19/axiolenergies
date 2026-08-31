@@ -1,0 +1,132 @@
+<div class="overview-page">
+  <!-- Botanical Picture Hero Banner -->
+  <section class="overview-hero-section">
+    <div class="axiol-container hero-grid">
+      <div class="hero-text-col">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-building"></i> Corporate Overview</span>
+        <h1>WHO WE ARE & OUR BUSINESS MODEL</h1>
+        <p class="lead-text">
+          Axiol Energies Limited is an integrated energy and infrastructure company delivering conventional energy, renewable power, electrical infrastructure, EPC delivery, and technical capacity building across Africa.
+        </p>
+        <div class="hero-stats-row">
+          <div class="h-stat">
+            <span class="val">100%</span>
+            <span class="lbl">Turnkey Delivery</span>
+          </div>
+          <div class="h-line"></div>
+          <div class="h-stat">
+            <span class="val">6+</span>
+            <span class="lbl">Clean Tech Pathways</span>
+          </div>
+          <div class="h-line"></div>
+          <div class="h-stat">
+            <span class="val">HSEQ</span>
+            <span class="lbl">Class Zero Risk</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-media-col">
+        <div class="photo-frame-card">
+          <img src="assets/images/axiol-hero-banner.png" alt="Axiol Infrastructure" onerror="this.src='https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80'">
+          <div class="frame-caption">
+            <span class="tag"><i class="fa-solid fa-earth-africa"></i> PAN-AFRICAN PRESENCE</span>
+            <h4>Engineering Safe, Bankable & Sustainable Power Solutions</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision, Mission, Purpose, Philosophy Photo Matrix -->
+  <section class="section-matrix">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-compass"></i> Strategic Pillars</span>
+        <h2>OUR GUIDING INSTITUTIONAL FOUNDATION</h2>
+        <p>Built on engineering discipline, safety, and lasting asset performance.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="matrix-photo-card">
+          <div class="card-img-box">
+            <img src="assets/images/solar-bess-farm.png" alt="Vision" onerror="this.src='https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=600&q=80'">
+            <span class="badge-tag"><i class="fa-solid fa-eye"></i> VISION</span>
+          </div>
+          <div class="card-body">
+            <h3>Vision</h3>
+            <p>{{ dataService.corporateOverview.vision }}</p>
+          </div>
+        </div>
+
+        <div class="matrix-photo-card">
+          <div class="card-img-box">
+            <img src="assets/images/electrical-substation.png" alt="Mission" onerror="this.src='https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80'">
+            <span class="badge-tag"><i class="fa-solid fa-bullseye"></i> MISSION</span>
+          </div>
+          <div class="card-body">
+            <h3>Mission</h3>
+            <p>{{ dataService.corporateOverview.mission }}</p>
+          </div>
+        </div>
+
+        <div class="matrix-photo-card">
+          <div class="card-img-box">
+            <img src="assets/images/oil-gas-depot.png" alt="Purpose" onerror="this.src='https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80'">
+            <span class="badge-tag"><i class="fa-solid fa-seedling"></i> PURPOSE</span>
+          </div>
+          <div class="card-body">
+            <h3>Purpose</h3>
+            <p>{{ dataService.corporateOverview.purpose }}</p>
+          </div>
+        </div>
+
+        <div class="matrix-photo-card">
+          <div class="card-img-box">
+            <img src="assets/images/technical-training.png" alt="Philosophy" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'">
+            <span class="badge-tag"><i class="fa-solid fa-book-bookmark"></i> PHILOSOPHY</span>
+          </div>
+          <div class="card-body">
+            <h3>Philosophy</h3>
+            <p>{{ dataService.corporateOverview.philosophy }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Integration Stepper Section -->
+  <section class="section-integration">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-cubes-stacked"></i> Value Chain Convergence</span>
+        <h2>ONE INTEGRATED ENERGY PARTNER</h2>
+        <p>Clients can engage one coordinated partner across origination, engineering, technology procurement, construction, commissioning, and operations.</p>
+      </div>
+
+      <div class="integration-grid">
+        @for (stage of dataService.valueChainStages; track stage.step) {
+          <div class="integration-card">
+            <div class="card-top">
+              <span class="step-num">0{{ stage.step }}</span>
+              <div class="icon-circle"><i class="fa-solid" [ngClass]="stage.icon"></i></div>
+            </div>
+            <h4>{{ stage.title }}</h4>
+            <span class="action-tag">{{ stage.action }}</span>
+            <p>{{ stage.description }}</p>
+          </div>
+        }
+      </div>
+
+      <div class="cta-photo-banner">
+        <div class="cta-text">
+          <h3>Ready to Partner with Axiol Energies?</h3>
+          <p>Contact our technical engineering team to evaluate your energy security and infrastructure goals.</p>
+        </div>
+        <a routerLink="/portfolio-contact" class="axiol-btn btn-forest">
+          Contact Engineering Team <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>

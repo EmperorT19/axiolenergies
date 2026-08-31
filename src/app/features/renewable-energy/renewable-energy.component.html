@@ -1,0 +1,75 @@
+<div class="renewable-page">
+  <!-- Banner with Photo Media Frame -->
+  <section class="page-banner emerald-theme">
+    <div class="axiol-container banner-grid">
+      <div class="banner-text">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-leaf"></i> Business Pillar 02</span>
+        <h1>RENEWABLE ENERGY PORTFOLIO</h1>
+        <p class="lead-text">
+          Clean Generation, Storage & Green Molecules — Delivering bankable utility-scale, commercial & industrial (C&I), remote mini-grid, and hybrid power across Africa.
+        </p>
+        <div class="banner-highlights">
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Utility Grid-Scale Solar PV</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Containerized BESS Storage</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Green H2 & Ammonia Molecules</span>
+        </div>
+      </div>
+
+      <div class="banner-media">
+        <div class="media-frame-card">
+          <img src="assets/images/solar-bess-farm.png" alt="Axiol Solar PV & Battery Storage Asset" onerror="this.src='https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80'">
+          <div class="media-caption">
+            <span class="badge"><i class="fa-solid fa-solar-panel"></i> Clean Generation Asset</span>
+            <span class="title">50MW Utility Solar PV & 100MWh Containerized BESS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Archetypes Matrix -->
+  <section class="section-archetypes">
+    <div class="axiol-container">
+      <div class="grid-4">
+        <div class="arch-card">
+          <span class="arch-tag"><i class="fa-solid fa-sun"></i> UTILITY-SCALE</span>
+          <p>Grid-connected generation, hybrid plants, and high-capacity storage at transmission and distribution level.</p>
+        </div>
+        <div class="arch-card">
+          <span class="arch-tag"><i class="fa-solid fa-industry"></i> C&I ENERGY</span>
+          <p>Behind-the-meter rooftop & ground mount generation, peak load shaving, and energy cost optimization.</p>
+        </div>
+        <div class="arch-card">
+          <span class="arch-tag"><i class="fa-solid fa-tower-cell"></i> REMOTE MINI-GRID</span>
+          <p>Self-sustaining hybrid power for isolated mining sites, agricultural estates, and off-grid communities.</p>
+        </div>
+        <div class="arch-card">
+          <span class="arch-tag"><i class="fa-solid fa-battery-full"></i> GRID SUPPORT</span>
+          <p>BESS-enabled frequency smoothing, voltage regulation, black-start, and fast-response grid stability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Matrix Grid with Rich Photo Cards -->
+  <section class="section-tech-matrix">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-microchip"></i> Technology Portfolio</span>
+        <h2>TECHNOLOGY SELECTION BASIS</h2>
+        <p>Project-specific engineering based on bankability, OEM warranties, local climate conditions, and lifecycle performance.</p>
+      </div>
+
+      <div class="grid-4">
+        @for (item of dataService.renewableCategories; track item.title) {
+          <div class="tech-photo-card">
+            <div class="t-badge-float">{{ item.badge }}</div>
+            <div class="t-icon-box"><i class="fa-solid" [ngClass]="item.icon"></i></div>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>

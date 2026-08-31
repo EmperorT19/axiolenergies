@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/app.component.scss"],
+  "sourcesContent": [".axiol-app-layout {\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n}\n\n.axiol-main-content {\n  flex: 1;\n  width: 100%;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,kBAAA;AACA,cAAA;;AAGF,CAAA;AACE,QAAA;AACA,SAAA;;",
+  "names": []
+}

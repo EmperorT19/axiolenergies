@@ -1,0 +1,73 @@
+<div class="warehousing-page">
+  <!-- Banner with Photo Media Frame -->
+  <section class="page-banner azure-theme">
+    <div class="axiol-container banner-grid">
+      <div class="banner-text">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-boxes-packing"></i> Equipment & Supply Chain</span>
+        <h1>BANKABLE HARDWARE AND LOGISTICS</h1>
+        <p class="lead-text">
+          Axiol bridges global OEMs and African energy infrastructure by sourcing, warehousing, inspecting, and delivering Tier-1 equipment.
+        </p>
+        <div class="banner-highlights">
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Tier-1 Bankable Warranties</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Regional Stock Hubs</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Quality Control Pre-Commissioning</span>
+        </div>
+      </div>
+
+      <div class="banner-media">
+        <div class="media-frame-card">
+          <img src="assets/images/equipment-warehouse.png" alt="Axiol Regional Equipment Warehousing Hub" onerror="this.src='https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80'">
+          <div class="media-caption">
+            <span class="badge"><i class="fa-solid fa-warehouse"></i> Regional Hub</span>
+            <span class="title">Secured Stocking for Transformers, Inverters & Solar Modules</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-Stage Stepper -->
+  <section class="section-wh-steps">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-truck-ramp-box"></i> Supply Chain Lifecycle</span>
+        <h2>FOUR STEPS TO GUARANTEED EQUIPMENT DELIVERY</h2>
+      </div>
+
+      <div class="grid-4">
+        @for (item of warehousingSteps; track item.step) {
+          <div class="step-photo-card">
+            <div class="s-head">
+              <div class="s-icon"><i class="fa-solid" [ngClass]="item.icon"></i></div>
+              <span class="s-num">0{{ item.step }}</span>
+            </div>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- OEM Partners Showcase -->
+  <section class="section-oem">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-handshake"></i> OEM Alliance</span>
+        <h2>TOP TIER MANUFACTURER PARTNERS</h2>
+        <p>Direct alliance with world-class renewable and electrical equipment manufacturers.</p>
+      </div>
+
+      <div class="grid-5">
+        @for (partner of dataService.oemPartners; track partner.name) {
+          <div class="oem-photo-card">
+            <div class="oem-icon"><i class="fa-solid" [ngClass]="partner.icon"></i></div>
+            <h3>{{ partner.name }}</h3>
+            <p>{{ partner.role }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>

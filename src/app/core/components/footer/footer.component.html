@@ -1,0 +1,92 @@
+<footer class="axiol-footer">
+  <div class="axiol-container footer-top">
+    <div class="footer-grid">
+      <!-- Brand & Mission Column -->
+      <div class="footer-brand-col">
+        <div class="brand-logo">
+          <div class="logo-mark">
+            <img 
+              src="assets/images/logo.png" 
+              alt="Axiol Energies Logo" 
+              class="brand-logo-img" 
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="logo-fallback-icon">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+          </div>
+          <div class="brand-text">
+            <span class="company-name">AXIOL <span class="accent">ENERGIES</span></span>
+            <span class="tagline">INTEGRATED POWER & INFRASTRUCTURE</span>
+          </div>
+        </div>
+        <p class="brand-desc">
+          {{ dataService.corporateOverview.summary }}
+        </p>
+        <div class="footer-badges">
+          <span class="axiol-badge sage"><i class="fa-solid fa-earth-africa"></i> Pan-African Infrastructure</span>
+          <span class="axiol-badge"><i class="fa-solid fa-shield-halved"></i> Engineering Discipline</span>
+        </div>
+      </div>
+
+      <!-- Key Business Pillars -->
+      <div class="footer-links-col">
+        <h4>Business Pillars</h4>
+        <ul>
+          <li><a routerLink="/oil-gas"><i class="fa-solid fa-angle-right"></i> Oil & Gas Solutions</a></li>
+          <li><a routerLink="/renewable-energy"><i class="fa-solid fa-angle-right"></i> Renewable Energy Portfolio</a></li>
+          <li><a routerLink="/electrical-infra"><i class="fa-solid fa-angle-right"></i> Electrical Infrastructure</a></li>
+          <li><a routerLink="/training-capacity"><i class="fa-solid fa-angle-right"></i> Training & Capacity Building</a></li>
+          <li><a routerLink="/integrated-solutions"><i class="fa-solid fa-angle-right"></i> Integrated Client Solutions</a></li>
+        </ul>
+      </div>
+
+      <!-- Engineering & Services -->
+      <div class="footer-links-col">
+        <h4>Capabilities</h4>
+        <ul>
+          <li><a routerLink="/epc-projects"><i class="fa-solid fa-angle-right"></i> Project Development & EPC</a></li>
+          <li><a routerLink="/engineering-consulting"><i class="fa-solid fa-angle-right"></i> Engineering & Power Studies</a></li>
+          <li><a routerLink="/equipment-warehousing"><i class="fa-solid fa-angle-right"></i> Equipment Warehousing</a></li>
+          <li><a routerLink="/hseq-sustainability"><i class="fa-solid fa-angle-right"></i> HSEQ & ESG Control Loop</a></li>
+          <li><a routerLink="/commercial-models"><i class="fa-solid fa-angle-right"></i> Commercial Models & IPP</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact & Headquarters -->
+      <div class="footer-contact-col">
+        <h4>Corporate Headquarters</h4>
+        <ul class="contact-info">
+          <li>
+            <i class="fa-solid fa-location-dot icon"></i>
+            <span>{{ dataService.corporateOverview.headOffice }}</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope icon"></i>
+            <span>{{ dataService.corporateOverview.email }}</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone icon"></i>
+            <span>{{ dataService.corporateOverview.phone }}</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-shield-cat icon"></i>
+            <span>Safety First • Engineering Discipline</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="axiol-container bottom-wrapper">
+      <p>&copy; {{ currentYear }} {{ dataService.corporateOverview.companyName }}. All rights reserved.</p>
+      <div class="bottom-links">
+        <a routerLink="/hseq-sustainability">HSEQ Policy</a>
+        <span>•</span>
+        <a routerLink="/overview">Privacy & Compliance</a>
+        <span>•</span>
+        <a routerLink="/portfolio-contact">Contact & Inquiry</a>
+      </div>
+    </div>
+  </div>
+</footer>

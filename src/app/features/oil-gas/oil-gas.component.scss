@@ -1,0 +1,269 @@
+.page-banner.amber-theme, .page-banner {
+  padding: 4.8rem 0 4.2rem 0;
+  background: linear-gradient(135deg, rgba(27, 67, 50, 0.08) 0%, rgba(244, 247, 244, 1) 100%);
+  border-bottom: 1px solid var(--border-editorial);
+
+  .banner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .banner-text {
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin: 1.2rem 0;
+      line-height: 1.15;
+    }
+
+    .lead-text {
+      font-size: 1.15rem;
+      color: var(--text-sub);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .banner-media {
+    padding: 0.4rem;
+    border-radius: var(--radius-lg);
+
+    .media-frame {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      border: 1px solid var(--border-editorial);
+      box-shadow: var(--shadow-card);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      &:hover img { transform: scale(1.05); }
+
+      .media-caption {
+        position: absolute;
+        bottom: 0;
+        inset-x: 0;
+        padding: 1.5rem;
+        background: linear-gradient(to top, rgba(15, 41, 30, 0.95) 0%, rgba(15, 41, 30, 0) 100%);
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+
+        .badge {
+          font-size: 0.72rem;
+          font-weight: 800;
+          color: var(--accent-mint);
+          text-transform: uppercase;
+        }
+
+        .title {
+          font-family: var(--font-heading);
+          font-weight: 600;
+          font-size: 0.98rem;
+          color: #FFFFFF;
+        }
+      }
+    }
+  }
+}
+
+.section-fuel-architecture {
+  padding: 6rem 0;
+
+  .axiol-section-title {
+    margin-bottom: 3.2rem;
+  }
+
+  .fuel-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.8rem;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+
+    .step-card {
+      position: relative;
+      text-align: center;
+      background: var(--bg-monolith-card);
+      border: 1px solid var(--border-editorial);
+      border-top: 3px solid var(--accent-sprout);
+      border-radius: var(--radius-md);
+      padding: 2.2rem 1.4rem 1.8rem 1.4rem;
+      box-shadow: var(--shadow-card);
+
+      .step-num {
+        position: absolute;
+        top: 0.8rem;
+        right: 0.8rem;
+        font-family: var(--font-heading);
+        font-weight: 800;
+        font-size: 0.78rem;
+        color: var(--accent-sprout);
+      }
+
+      .step-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: var(--radius-full);
+        background: rgba(45, 106, 79, 0.12);
+        color: var(--accent-sprout);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        margin: 0 auto 1.2rem auto;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 0.88rem;
+        color: var(--text-sub);
+        line-height: 1.55;
+      }
+    }
+  }
+}
+
+/* Turnkey Scope Grid */
+.section-capabilities {
+  padding: 6rem 0;
+  background: var(--bg-monolith-main);
+  border-top: 1px solid var(--border-editorial);
+
+  .axiol-section-title {
+    margin-bottom: 3.2rem;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.2rem;
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .scope-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border-editorial);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-card);
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    .scope-img-frame {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      .scope-tag-float {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: rgba(15, 41, 30, 0.88);
+        backdrop-filter: blur(8px);
+        color: var(--accent-mint);
+        padding: 0.35rem 0.85rem;
+        border-radius: var(--radius-full);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+
+        i { color: var(--accent-mint); }
+      }
+    }
+
+    .scope-card-body {
+      padding: 2.2rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+
+      h3 {
+        font-family: var(--font-heading);
+        font-weight: 800;
+        font-size: 1.25rem;
+        margin-bottom: 0.6rem;
+        color: var(--text-main);
+      }
+
+      p {
+        font-size: 0.92rem;
+        color: var(--text-sub);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .scope-features-list {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+        padding-top: 1.2rem;
+        border-top: 1px solid rgba(45, 106, 79, 0.15);
+
+        li {
+          font-size: 0.84rem;
+          color: var(--text-main);
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          gap: 0.55rem;
+
+          i {
+            color: var(--accent-sprout);
+            font-size: 0.78rem;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent-sprout);
+      box-shadow: var(--shadow-hover);
+
+      .scope-img-frame img {
+        transform: scale(1.08);
+      }
+    }
+  }
+}

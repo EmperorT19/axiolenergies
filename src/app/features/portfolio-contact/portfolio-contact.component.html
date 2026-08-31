@@ -1,0 +1,144 @@
+<div class="contact-page">
+  <!-- Banner with Photo Media Frame -->
+  <section class="page-banner azure-theme">
+    <div class="axiol-container banner-grid">
+      <div class="banner-text">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-paper-plane"></i> Regional Engagement</span>
+        <h1>PORTFOLIO INQUIRIES & PROJECT ENGAGEMENT</h1>
+        <p class="lead-text">
+          Connect with Axiol’s engineering and business development team to discuss feasibility, origination, petroleum infrastructure, renewable energy, electrical grid connection, or technical capacity building.
+        </p>
+        <div class="banner-highlights">
+          <span class="b-chip"><i class="fa-solid fa-check"></i> 24-Hour Engineering Response</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Bankable Project Evaluation</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Pan-African Field Presence</span>
+        </div>
+      </div>
+
+      <div class="banner-media">
+        <div class="media-frame-card">
+          <img src="assets/images/axiol-hero-banner.png" alt="Axiol Regional Corporate Engagement" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80'">
+          <div class="media-caption">
+            <span class="badge"><i class="fa-solid fa-building"></i> Regional Headquarters</span>
+            <span class="title">Engineering Support, Project Origination & Client Advisory</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form & Info Grid -->
+  <section class="section-contact-grid">
+    <div class="axiol-container">
+      <div class="grid-2">
+        <!-- Contact Form Box -->
+        <div class="form-photo-card">
+          <h2>INQUIRE ABOUT A PROJECT</h2>
+          <p class="form-sub">Fill out your project requirements below and our engineering team will respond within 24 hours.</p>
+
+          <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+            <div class="form-group">
+              <label for="fullName">Full Name *</label>
+              <input type="text" id="fullName" class="axiol-input" name="fullName" [(ngModel)]="formData.fullName" required placeholder="e.g. Eng. Daniel Koech">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Corporate Email *</label>
+              <input type="email" id="email" class="axiol-input" name="email" [(ngModel)]="formData.email" required placeholder="name@company.com">
+            </div>
+
+            <div class="form-group">
+              <label for="organization">Organization / Company *</label>
+              <input type="text" id="organization" class="axiol-input" name="organization" [(ngModel)]="formData.organization" required placeholder="Organization Name">
+            </div>
+
+            <div class="form-group">
+              <label for="pillar">Primary Business Pillar *</label>
+              <select id="pillar" class="axiol-input" name="pillar" [(ngModel)]="formData.pillar" required>
+                <option value="">Select Infrastructure Scope...</option>
+                <option value="oil-gas">Oil & Gas Petroleum Infrastructure</option>
+                <option value="renewable">Renewable Energy (Solar PV & BESS)</option>
+                <option value="electrical">Electrical Infrastructure & Substations</option>
+                <option value="epc">Project Development & Turnkey EPC</option>
+                <option value="consulting">Engineering & System Studies</option>
+                <option value="training">Training & Human Capacity Building</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Project Scope / Summary *</label>
+              <textarea id="message" class="axiol-input" name="message" rows="4" [(ngModel)]="formData.message" required placeholder="Describe location, MW/capacity requirements, target timelines..."></textarea>
+            </div>
+
+            <button type="submit" class="axiol-btn btn-forest btn-full" [disabled]="!contactForm.valid || formSubmitted">
+              <i class="fa-solid fa-paper-plane"></i> {{ formSubmitted ? 'Message Sent Successfully' : 'Submit Inquiries' }}
+            </button>
+
+            @if (formSubmitted) {
+              <div class="success-msg">
+                <i class="fa-solid fa-circle-check"></i> Thank you! Your inquiry has been received by our technical engineering team.
+              </div>
+            }
+          </form>
+        </div>
+
+        <!-- Corporate Address & Locations -->
+        <div class="info-photo-card">
+          <h2>HEADQUARTERS & REGIONAL HUBS</h2>
+          <p class="info-desc">Axiol operates across African energy growth corridors, coordinating execution through our regional engineering centers.</p>
+
+          <div class="info-list">
+            <div class="info-item">
+              <div class="i-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <h4>Corporate Headquarters</h4>
+                <p>{{ dataService.corporateOverview.headOffice }}</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="i-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <h4>Direct Inquiries</h4>
+                <p>{{ dataService.corporateOverview.email }}</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="i-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <h4>Corporate Phone</h4>
+                <p>{{ dataService.corporateOverview.phone }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="safety-banner">
+            <i class="fa-solid fa-shield-cat"></i>
+            <span>Safety First • Engineering Discipline • Bankable Asset Performance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Axiol Strategic Advantages -->
+  <section class="section-advantages">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-award"></i> The Axiol Edge</span>
+        <h2>WHY PARTNER WITH AXIOL ENERGIES</h2>
+      </div>
+
+      <div class="grid-4">
+        @for (adv of axiolAdvantages; track adv.title) {
+          <div class="adv-photo-card">
+            <div class="adv-icon"><i [class]="adv.icon"></i></div>
+            <h3>{{ adv.title }}</h3>
+            <p>{{ adv.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>

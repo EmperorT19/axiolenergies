@@ -1,0 +1,85 @@
+<div class="electrical-page">
+  <!-- Banner with Photo Media Frame -->
+  <section class="page-banner azure-theme">
+    <div class="axiol-container banner-grid">
+      <div class="banner-text">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-bolt"></i> Business Pillar 03</span>
+        <h1>ELECTRICAL INFRASTRUCTURE DEVELOPMENT</h1>
+        <p class="lead-text">
+          From Generation to Load — Distribution networks, transmission lines, primary substations, digital protection, and SCADA telemetry engineered as one coordinated power system.
+        </p>
+        <div class="banner-highlights">
+          <span class="b-chip"><i class="fa-solid fa-check"></i> 132kV/33kV Primary Substations</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> SCADA & Digital Protection Relays</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Grid Code Compliance Verification</span>
+        </div>
+      </div>
+
+      <div class="banner-media">
+        <div class="media-frame-card">
+          <img src="assets/images/electrical-substation.png" alt="Axiol High Voltage Substation Infrastructure" onerror="this.src='https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=800&q=80'">
+          <div class="media-caption">
+            <span class="badge"><i class="fa-solid fa-bolt-lightning"></i> High Voltage Substation</span>
+            <span class="title">132kV Switching Station & Line Bay Infrastructure</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Infrastructure Scopes -->
+  <section class="section-infra-scopes">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-layer-group"></i> Power Architecture</span>
+        <h2>FOUR HIGH VOLTAGE ENGINEERING DOMAINS</h2>
+      </div>
+
+      <div class="grid-4">
+        <div class="infra-photo-card">
+          <div class="icon-head"><i class="fa-solid fa-tower-cell"></i></div>
+          <h3>TRANSMISSION</h3>
+          <p>HV overhead lines, tower foundations, line bays, optical ground wire (OPGW), and grid interconnection interfaces.</p>
+        </div>
+
+        <div class="infra-photo-card">
+          <div class="icon-head"><i class="fa-solid fa-network-wired"></i></div>
+          <h3>DISTRIBUTION</h3>
+          <p>MV/LV underground and overhead networks, step-down transformers, auto-reclosers, and smart metering feeders.</p>
+        </div>
+
+        <div class="infra-photo-card">
+          <div class="icon-head"><i class="fa-solid fa-charging-station"></i></div>
+          <h3>SUBSTATIONS</h3>
+          <p>Primary AIS/GIS substations, power transformers, switchgear, control buildings, SCADA, and auxiliary DC systems.</p>
+        </div>
+
+        <div class="infra-photo-card">
+          <div class="icon-head"><i class="fa-solid fa-industry"></i></div>
+          <h3>INDUSTRIAL POWER</h3>
+          <p>Heavy manufacturing power distribution, main switchboards, diesel generator synchronizing, and power quality conditioning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Network Capability Matrix -->
+  <section class="section-capabilities">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-list-check"></i> Grid Integration Scope</span>
+        <h2>NETWORK CAPABILITY MATRIX</h2>
+        <p>Axiol integrates generation interfaces, substations, lines, protection, control, metering, and end-user distribution.</p>
+      </div>
+
+      <div class="grid-2">
+        @for (cap of networkCapabilities; track cap) {
+          <div class="cap-item-card">
+            <div class="check-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+            <span>{{ cap }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>

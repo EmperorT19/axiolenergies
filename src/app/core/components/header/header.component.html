@@ -1,0 +1,127 @@
+<header class="axiol-header">
+  <div class="axiol-container header-wrapper">
+    
+    <!-- Brand Logo with Image Slot + Fallback Icon -->
+    <a routerLink="/" class="brand-logo" (click)="closeMobileMenu()">
+      <div class="logo-mark">
+        <img 
+          src="assets/images/logo.png" 
+          alt="Axiol Energies Logo" 
+          class="brand-logo-img" 
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="logo-fallback-icon">
+          <i class="fa-solid fa-leaf"></i>
+        </div>
+      </div>
+      <div class="brand-text">
+        <span class="company-name">AXIOL <span class="accent-text">ENERGIES</span></span>
+        <span class="company-tagline"><i class="fa-solid fa-seedling"></i> INTEGRATED INFRASTRUCTURE</span>
+      </div>
+    </a>
+
+    <!-- Navigation Links (Desktop with Picture Room Dropdown) -->
+    <nav class="desktop-nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      
+      <!-- Pillars Mega Menu with Picture Room -->
+      <div class="nav-mega-item">
+        <a routerLink="/overview" routerLinkActive="active" class="mega-trigger">
+          Infrastructure Pillars <i class="fa-solid fa-chevron-down nav-arrow"></i>
+        </a>
+
+        <!-- Picture Preview Mega Dropdown -->
+        <div class="mega-dropdown-panel">
+          <div class="mega-grid">
+            
+            <a routerLink="/oil-gas" class="mega-photo-card">
+              <div class="m-img-wrap">
+                <img src="assets/images/oil-gas-depot.png" alt="Oil & Gas" onerror="this.src='https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=400&q=80'">
+              </div>
+              <div class="m-txt">
+                <span class="m-cat">PETROLEUM</span>
+                <h5>Oil & Gas Infrastructure</h5>
+              </div>
+            </a>
+
+            <a routerLink="/renewable-energy" class="mega-photo-card">
+              <div class="m-img-wrap">
+                <img src="assets/images/solar-bess-farm.png" alt="Renewable Energy" onerror="this.src='https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=400&q=80'">
+              </div>
+              <div class="m-txt">
+                <span class="m-cat">SOLAR & BESS</span>
+                <h5>Renewables & Storage</h5>
+              </div>
+            </a>
+
+            <a routerLink="/electrical-infra" class="mega-photo-card">
+              <div class="m-img-wrap">
+                <img src="assets/images/electrical-substation.png" alt="Electrical Infra" onerror="this.src='https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=400&q=80'">
+              </div>
+              <div class="m-txt">
+                <span class="m-cat">HIGH VOLTAGE</span>
+                <h5>Electrical Infrastructure</h5>
+              </div>
+            </a>
+
+            <a routerLink="/training-capacity" class="mega-photo-card">
+              <div class="m-img-wrap">
+                <img src="assets/images/technical-training.png" alt="Capacity Building" onerror="this.src='https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=400&q=80'">
+              </div>
+              <div class="m-txt">
+                <span class="m-cat">HUMAN CAPITAL</span>
+                <h5>Training & Capacity</h5>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <a routerLink="/epc-projects" routerLinkActive="active">EPC & Dev</a>
+      <a routerLink="/engineering-consulting" routerLinkActive="active">Engineering</a>
+      <a routerLink="/hseq-sustainability" routerLinkActive="active">HSEQ & ESG</a>
+      <a routerLink="/commercial-models" routerLinkActive="active">Ecosystem</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <a routerLink="/portfolio-contact" class="axiol-btn btn-forest btn-sm">
+        <i class="fa-solid fa-envelope"></i> Contact Us
+      </a>
+      <button class="mobile-toggle" (click)="toggleMobileMenu()" aria-label="Toggle Menu">
+        <i class="fa-solid" [ngClass]="mobileMenuOpen ? 'fa-xmark' : 'fa-bars'"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu with Photo Thumbnails -->
+  <div class="mobile-drawer" [class.open]="mobileMenuOpen">
+    <div class="drawer-header">
+      <span class="drawer-title"><i class="fa-solid fa-leaf"></i> AXIOL NAVIGATION</span>
+      <button class="close-btn" (click)="closeMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <nav class="mobile-nav">
+      <a routerLink="/" (click)="closeMobileMenu()"><i class="fa-solid fa-house"></i> Home</a>
+      <a routerLink="/overview" (click)="closeMobileMenu()"><i class="fa-solid fa-building"></i> Corporate Overview</a>
+      
+      <!-- Mobile Pillar Cards -->
+      <a routerLink="/oil-gas" (click)="closeMobileMenu()" class="nav-photo-link">
+        <img src="assets/images/oil-gas-depot.png" alt="Oil Gas" class="thumb-img" onerror="this.src='https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=150&q=80'">
+        <span>Oil & Gas Infrastructure</span>
+      </a>
+      <a routerLink="/renewable-energy" (click)="closeMobileMenu()" class="nav-photo-link">
+        <img src="assets/images/solar-bess-farm.png" alt="Renewable" class="thumb-img" onerror="this.src='https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=150&q=80'">
+        <span>Renewables & Storage</span>
+      </a>
+      <a routerLink="/electrical-infra" (click)="closeMobileMenu()" class="nav-photo-link">
+        <img src="assets/images/electrical-substation.png" alt="Substation" class="thumb-img" onerror="this.src='https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=150&q=80'">
+        <span>Electrical Infrastructure</span>
+      </a>
+      
+      <a routerLink="/epc-projects" (click)="closeMobileMenu()"><i class="fa-solid fa-screwdriver-wrench"></i> Project EPC</a>
+      <a routerLink="/engineering-consulting" (click)="closeMobileMenu()"><i class="fa-solid fa-compass-drafting"></i> Engineering</a>
+      <a routerLink="/hseq-sustainability" (click)="closeMobileMenu()"><i class="fa-solid fa-shield-halved"></i> HSEQ & ESG</a>
+      <a routerLink="/portfolio-contact" (click)="closeMobileMenu()" class="drawer-cta"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+    </nav>
+  </div>
+</header>

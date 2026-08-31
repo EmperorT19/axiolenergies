@@ -1,0 +1,83 @@
+<div class="epc-page">
+  <!-- Banner with Photo Media Frame -->
+  <section class="page-banner">
+    <div class="axiol-container banner-grid">
+      <div class="banner-text">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-screwdriver-wrench"></i> Turnkey Execution</span>
+        <h1>PROJECT DEVELOPMENT & EPC CAPABILITY</h1>
+        <p class="lead-text">
+          Axiol’s EPC delivery integrates engineering accountability, commercial coordination, site HSEQ safety, and system interfaces so equipment is delivered as a fully functioning asset.
+        </p>
+        <div class="banner-highlights">
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Single Point EPC Accountability</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> FEED & Detailed Engineering</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Commissioning & Handover</span>
+        </div>
+      </div>
+
+      <div class="banner-media">
+        <div class="media-frame-card">
+          <img src="assets/images/equipment-warehouse.png" alt="Axiol Project EPC Delivery Facility" onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80'">
+          <div class="media-caption">
+            <span class="badge"><i class="fa-solid fa-boxes-packing"></i> Turnkey Logistics</span>
+            <span class="title">Engineering Procurement, Equipment Storage & Site Logistics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6-Stage Breakdown Cards -->
+  <section class="section-epc-breakdown">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-gears"></i> EPC Delivery Model</span>
+        <h2>SIX STAGES OF TURNKEY ACCOUNTABILITY</h2>
+      </div>
+
+      <div class="grid-3">
+        @for (item of epcDetails; track item.title) {
+          <div class="epc-card">
+            <div class="card-icon-box"><i class="fa-solid fa-gears"></i></div>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Development Scope List -->
+  <section class="section-dev-scope">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-list-check"></i> Project Lifecycle Activities</span>
+        <h2>COMPLETE TURNKEY DEVELOPMENT ACTIVITIES</h2>
+        <p>Axiol develops projects from opportunity screening through commissioning and commercial operations.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="scope-box-card">
+          <h4><i class="fa-solid fa-compass-drafting"></i> Origination & Feasibility</h4>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Site screening and solar/wind resource assessment</li>
+            <li><i class="fa-solid fa-check"></i> Feasibility and bankability studies</li>
+            <li><i class="fa-solid fa-check"></i> Land and project rights acquisition support</li>
+            <li><i class="fa-solid fa-check"></i> ESIA environmental and stakeholder coordination</li>
+            <li><i class="fa-solid fa-check"></i> Grid interconnection load-flow studies</li>
+          </ul>
+        </div>
+        <div class="scope-box-card">
+          <h4><i class="fa-solid fa-diagram-project"></i> Execution & Offtake</h4>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> PPA and captive power agreement support</li>
+            <li><i class="fa-solid fa-check"></i> Financial structuring and SPV support</li>
+            <li><i class="fa-solid fa-check"></i> Turnkey EPC and testing execution</li>
+            <li><i class="fa-solid fa-check"></i> Operations and lasting asset maintenance</li>
+            <li><i class="fa-solid fa-check"></i> Utility Scale • Commercial • Remote Grid • Hybrid</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

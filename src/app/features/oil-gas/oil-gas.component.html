@@ -1,0 +1,112 @@
+<div class="oil-gas-page">
+  <!-- Page Hero Banner with Image Frame -->
+  <section class="page-banner amber-theme">
+    <div class="axiol-container banner-grid">
+      <div class="banner-text">
+        <span class="axiol-badge amber"><i class="fa-solid fa-oil-well"></i> Business Pillar 01</span>
+        <h1>PETROLEUM INFRASTRUCTURE & FUEL MANAGEMENT</h1>
+        <p class="lead-text">
+          Delivering bulk supply, storage tanks, fuel transfer pumps, smart metering, and automated fuel management systems across mining, agriculture, transport, and commercial operations in Africa.
+        </p>
+      </div>
+
+      <div class="banner-media axiol-card">
+        <div class="media-frame">
+          <img src="assets/images/oil-gas-depot.png" alt="Axiol Petroleum Fuel Depot Facility" onerror="this.src='https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80'">
+          <div class="media-caption">
+            <span class="badge"><i class="fa-solid fa-gas-pump"></i> Fuel Asset Architecture</span>
+            <span class="title">Engineered Fuel Depot & Smart Automated Metering</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5-Stage Fuel Architecture Stepper -->
+  <section class="section-fuel-architecture">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge amber"><i class="fa-solid fa-gears"></i> Fuel Value Chain</span>
+        <h2>COMPLETE TURNKEY FUEL SYSTEM ARCHITECTURE</h2>
+        <p>Axiol designs, builds, operates and maintains complete onsite fuel infrastructure to prevent fuel loss, control costs, and secure supply.</p>
+      </div>
+
+      <div class="fuel-steps-grid">
+        @for (step of dataService.fuelArchitecture; track step.stepNumber) {
+          <div class="axiol-card step-card">
+            <div class="step-num">0{{ step.stepNumber }}</div>
+            <div class="step-icon"><i class="fa-solid" [ngClass]="step.icon"></i></div>
+            <h3>{{ step.stage }}</h3>
+            <p>{{ step.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Redesigned Editorial Turnkey Scope Grid -->
+  <section class="section-capabilities">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge"><i class="fa-solid fa-list-check"></i> Turnkey Scope</span>
+        <h2>CORE PETROLEUM CAPABILITIES</h2>
+        <p>End-to-end petroleum engineering from tank farm design to intelligent cloud metering.</p>
+      </div>
+
+      <div class="grid-3">
+        
+        <!-- Scope Card 01 -->
+        <div class="scope-card">
+          <div class="scope-img-frame">
+            <img src="assets/images/oil-gas-depot.png" alt="Bulk Storage Tanks" onerror="this.src='https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80'">
+            <span class="scope-tag-float"><i class="fa-solid fa-database"></i> BULK PETROLEUM</span>
+          </div>
+          <div class="scope-card-body">
+            <h3>BULK FUEL SUPPLY & STORAGE</h3>
+            <p>Aboveground and underground steel tank farm installations, bunding walls, leak detection, and environmental containment systems built to API 650 standards.</p>
+            <ul class="scope-features-list">
+              <li><i class="fa-solid fa-check"></i> API 650 & SANS Compliant Storage</li>
+              <li><i class="fa-solid fa-check"></i> Double Wall Leak Detection</li>
+              <li><i class="fa-solid fa-check"></i> Secondary Bunding Containment</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Scope Card 02 -->
+        <div class="scope-card">
+          <div class="scope-img-frame">
+            <img src="assets/images/equipment-warehouse.png" alt="Smart Fuel Dispensers & Metering" onerror="this.src='https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80'">
+            <span class="scope-tag-float"><i class="fa-solid fa-tachograph-digital"></i> DIGITAL METERING</span>
+          </div>
+          <div class="scope-card-body">
+            <h3>SMART METERING & RECONCILIATION</h3>
+            <p>High-flow digital meters, ATG automatic tank gauging, RFID vehicle tag identification, and real-time cloud fuel reconciliation telemetry.</p>
+            <ul class="scope-features-list">
+              <li><i class="fa-solid fa-check"></i> Automatic Tank Gauging (ATG)</li>
+              <li><i class="fa-solid fa-check"></i> RFID Vehicle Tag Fuel Auth</li>
+              <li><i class="fa-solid fa-check"></i> Realtime Cloud Telemetry</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Scope Card 03 -->
+        <div class="scope-card">
+          <div class="scope-img-frame">
+            <img src="assets/images/technical-training.png" alt="Maintenance & Operations Support" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'">
+            <span class="scope-tag-float"><i class="fa-solid fa-shield-halved"></i> ONSITE O&M</span>
+          </div>
+          <div class="scope-card-body">
+            <h3>ONSITE OPERATIONS & MAINTENANCE</h3>
+            <p>Dedicated fuel technicians, meter calibration services, pump overhauls, filter replacements, and 24/7 emergency response for zero operational downtime.</p>
+            <ul class="scope-features-list">
+              <li><i class="fa-solid fa-check"></i> 24/7 Onsite Technical Support</li>
+              <li><i class="fa-solid fa-check"></i> Certified Meter Calibration</li>
+              <li><i class="fa-solid fa-check"></i> Preventive Maintenance Plans</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>

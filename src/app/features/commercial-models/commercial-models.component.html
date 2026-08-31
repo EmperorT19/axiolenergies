@@ -1,0 +1,70 @@
+<div class="models-page">
+  <!-- Banner with Photo Media Frame -->
+  <section class="page-banner">
+    <div class="axiol-container banner-grid">
+      <div class="banner-text">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-file-signature"></i> Contracting Flexibility</span>
+        <h1>COMMERCIAL MODELS & ECOSYSTEM STRUCTURES</h1>
+        <p class="lead-text">
+          Structuring commercial contracts to match client risk profiles, capital allocation preferences, operating capabilities, and project finance requirements.
+        </p>
+        <div class="banner-highlights">
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Turnkey EPC & BOT Contracts</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Independent Power Producer (IPP)</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Energy-as-a-Service (EaaS)</span>
+        </div>
+      </div>
+
+      <div class="banner-media">
+        <div class="media-frame-card">
+          <img src="assets/images/solar-bess-farm.png" alt="Axiol Commercial Models and IPP Infrastructure" onerror="this.src='https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80'">
+          <div class="media-caption">
+            <span class="badge"><i class="fa-solid fa-scale-balanced"></i> Bankable Structuring</span>
+            <span class="title">Bankable Offtake Contracts, IPP Investment & Turnkey Delivery</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Models Grid -->
+  <section class="section-models-grid">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-handshake"></i> Framework Options</span>
+        <h2>COMMERCIAL CONTRACTING FRAMEWORKS</h2>
+      </div>
+
+      <div class="grid-3">
+        @for (m of dataService.commercialModels; track m.title) {
+          <div class="model-photo-card">
+            <span class="m-tag">{{ m.tag }}</span>
+            <h3>{{ m.title }}</h3>
+            <p>{{ m.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Decision Criteria Grid -->
+  <section class="section-criteria">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-scale-balanced"></i> Bankability Focus</span>
+        <h2>STRUCTURE SELECTION FACTORS</h2>
+        <p>Key financial and operational considerations when choosing contract frameworks.</p>
+      </div>
+
+      <div class="grid-4">
+        @for (c of decisionCriteria; track c.title) {
+          <div class="c-photo-card">
+            <div class="icon-circle"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>{{ c.title }}</h3>
+            <p>{{ c.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>

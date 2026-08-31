@@ -1,0 +1,70 @@
+<div class="hseq-page">
+  <!-- Banner with Photo Media Frame -->
+  <section class="page-banner amber-theme">
+    <div class="axiol-container banner-grid">
+      <div class="banner-text">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-shield-halved"></i> Governance & Standards</span>
+        <h1>HSEQ, SUSTAINABILITY & ESG CONTROL LOOP</h1>
+        <p class="lead-text">
+          Safety, health, environment, and quality are integrated into every phase of Axiol’s engineering, procurement, and field construction workflows.
+        </p>
+        <div class="banner-highlights">
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Zero Harm Safety Protocol</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> ISO 9001 / 14001 / 45001 Compliance</span>
+          <span class="b-chip"><i class="fa-solid fa-check"></i> Closed-Loop Risk Verification</span>
+        </div>
+      </div>
+
+      <div class="banner-media">
+        <div class="media-frame-card">
+          <img src="assets/images/axiol-hero-banner.png" alt="Axiol HSEQ Safety Assurance Asset" onerror="this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80'">
+          <div class="media-caption">
+            <span class="badge"><i class="fa-solid fa-shield-cat"></i> HSEQ Governance</span>
+            <span class="title">Zero Incident Policy, Site Risk Audits & Environmental Stewardship</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HSEQ Loop Stepper -->
+  <section class="section-hseq-loop">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-arrows-rotate"></i> Closed Loop Control</span>
+        <h2>HSEQ CONTROL LOOP</h2>
+        <p>A continuous 6-step risk identification, mitigation, and audit workflow.</p>
+      </div>
+
+      <div class="grid-6">
+        @for (step of dataService.hseqLoop; track step.code) {
+          <div class="loop-photo-card">
+            <div class="l-code">{{ step.code }}</div>
+            <h3>{{ step.action }}</h3>
+            <p>{{ step.target }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles Grid -->
+  <section class="section-hseq-principles">
+    <div class="axiol-container">
+      <div class="axiol-section-title">
+        <span class="axiol-badge sprout"><i class="fa-solid fa-leaf"></i> Core ESG Commitments</span>
+        <h2>ENVIRONMENTAL & OPERATIONAL PRINCIPLES</h2>
+      </div>
+
+      <div class="grid-4">
+        @for (item of hseqPrinciples; track item.title) {
+          <div class="hp-photo-card">
+            <div class="hp-icon"><i class="fa-solid" [ngClass]="item.icon"></i></div>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>
