@@ -30,62 +30,38 @@
 
   .footer-brand-col {
     .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
       margin-bottom: 1.2rem;
+      display: inline-block;
 
-      .logo-mark {
-        width: 44px;
-        height: 44px;
+      .footer-logo-card {
+        background: #FFFFFF;
+        padding: 0;
+        width: 280px;
+        height: 84px;
+        overflow: hidden;
         border-radius: var(--radius-sm);
-        background: linear-gradient(135deg, #0C3B2E, #1E4638);
-        color: #FFFFFF;
-        display: flex;
+        display: inline-flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.2rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
-        position: relative;
-        flex-shrink: 0;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        @media (max-width: 576px) {
+          width: 210px;
+          height: 64px;
+        }
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(82, 183, 136, 0.3);
+        }
 
         .brand-logo-img {
           width: 100%;
           height: 100%;
           object-fit: contain;
-          padding: 4px;
-        }
-
-        .logo-fallback-icon {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-      }
-
-      .brand-text {
-        display: flex;
-        flex-direction: column;
-
-        .company-name {
-          font-family: var(--font-heading);
-          font-weight: 800;
-          font-size: 1.25rem;
-          color: #FFFFFF;
-
-          .accent {
-            color: var(--accent-mint);
-          }
-        }
-
-        .tagline {
-          font-size: 0.65rem;
-          letter-spacing: 0.14em;
-          color: var(--accent-mint);
-          font-weight: 700;
+          transform: scale(2.35);
         }
       }
     }

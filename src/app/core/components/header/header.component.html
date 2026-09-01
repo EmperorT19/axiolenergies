@@ -1,22 +1,12 @@
 <header class="axiol-header">
   <div class="axiol-container header-wrapper">
     
-    <!-- Brand Logo with Image Slot + Fallback Icon -->
-    <a routerLink="/" class="brand-logo" (click)="closeMobileMenu()">
-      <div class="logo-mark">
-        <img 
-          src="assets/images/logo.png" 
-          alt="Axiol Energies Logo" 
-          class="brand-logo-img" 
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="logo-fallback-icon">
-          <i class="fa-solid fa-leaf"></i>
-        </div>
-      </div>
-      <div class="brand-text">
-        <span class="company-name">AXIOL <span class="accent-text">ENERGIES</span></span>
-        <span class="company-tagline"><i class="fa-solid fa-seedling"></i> INTEGRATED INFRASTRUCTURE</span>
-      </div>
+    <!-- Brand Logo Picture Replacement -->
+    <a routerLink="/" class="brand-logo" (click)="closeMobileMenu()" title="Axiol Energies - Integrated Infrastructure">
+      <img 
+        src="axiolenergies.jpeg" 
+        alt="Axiol Energies Logo" 
+        class="brand-logo-img">
     </a>
 
     <!-- Navigation Links (Desktop with Picture Room Dropdown) -->
@@ -97,7 +87,7 @@
   <!-- Mobile Drawer Menu with Photo Thumbnails -->
   <div class="mobile-drawer" [class.open]="mobileMenuOpen">
     <div class="drawer-header">
-      <span class="drawer-title"><i class="fa-solid fa-leaf"></i> AXIOL NAVIGATION</span>
+      <span class="drawer-title"><img src="logo.png" alt="Axiol Logo" class="drawer-logo-icon"> AXIOL NAVIGATION</span>
       <button class="close-btn" (click)="closeMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <nav class="mobile-nav">
