@@ -1,50 +1,41 @@
 /* ==========================================================================
-   AXIOL ENERGIES - CUSTOM TYPOGRAPHY & DUAL GREEN PALETTE SYSTEM
-   - Headings: YDYoonche (SemiBold 600)
-   - Body & Other Elements: Poppins (Regular 400 / Medium 500)
-   - Colors: Shade 1 (#0C3B2E) & Shade 2 (#62B829)
+   AXIOL ENERGIES - TWO-SHADE BOTANICAL GREEN, WHITE & BLACK (GLOBAL STYLES)
    ========================================================================== */
 
-/* Custom Font-Face: YDYoonche */
-@font-face {
-  font-family: 'YDYoonche';
-  src: url('/YDYooncheB.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Exact Dual Green Palette */
-  --accent-forest: #0C3B2E;       /* Shade 1: Deep Dark Forest Green */
-  --accent-sprout: #62B829;       /* Shade 2: Vibrant Bright Green */
-  --accent-mint: #62B829;         /* Accent Bright Green */
-  --accent-sand: #EEF7E8;         /* Light Green Background Tint */
-  --accent-terracotta: #62B829;   /* Map terracotta to Bright Green */
-  
-  /* Surfaces & Backgrounds */
-  --bg-monolith-main: #F4F8F3;     /* Crisp Light Eco Surface */
-  --bg-monolith-card: #FFFFFF;     /* Pure Crisp White Surface */
-  --bg-monolith-dark: #0C3B2E;     /* Deep Dark Forest Surface */
-  
-  /* Text Colors */
-  --text-main: #0C3B2E;           /* Deep Forest Text */
-  --text-sub: #1E4638;            /* Medium Dark Forest Text */
-  --text-muted: #547C6C;          /* Muted Green Text */
-  
-  /* Borders & Shadows */
-  --border-editorial: rgba(12, 59, 46, 0.16);
-  --border-light: rgba(98, 184, 41, 0.3);
-  --radius-sm: 10px;
-  --radius-md: 18px;
-  --radius-lg: 26px;
+  /* Primary Botanical Green Shades */
+  --accent-forest: #0C3B2E;    /* Deep Botanical Forest Green */
+  --accent-sprout: #62B829;    /* Bright Sprout Green */
+  --accent-mint: #62B829;      /* Unified Sprout Green */
+  --accent-sand: #E8F5E1;      /* Light Botanical Tint */
+  --accent-terracotta: #62B829;/* Standardized Sprout Green */
+
+  /* Neutral Background System */
+  --bg-monolith-main: #F4F8F3; /* Crisp White-Green Canvas */
+  --bg-monolith-card: #FFFFFF; /* Pure White Card Surfaces */
+  --bg-monolith-dark: #051A13; /* Deepest Forest Dark Footer/Accents */
+
+  /* Typography Colors */
+  --text-main: #0C3B2E;        /* Deepest Forest Green for Headings & Text */
+  --text-sub: #3B5249;         /* Dark Sage Subtext for High Contrast */
+  --text-muted: #5E7A6E;       /* Muted Greenish-Gray */
+
+  /* Standardized Typography */
+  --font-heading: 'YDYoonche', 'Poppins', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+
+  /* Editorial Borders & Shadows */
+  --border-editorial: rgba(12, 59, 46, 0.15);
+  --shadow-card: 0 4px 20px rgba(12, 59, 46, 0.06);
+  --shadow-hover: 0 12px 36px rgba(12, 59, 46, 0.14);
+
+  /* Radius Utility */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
   --radius-full: 9999px;
-  --shadow-card: 0 12px 35px -5px rgba(12, 59, 46, 0.08);
-  --shadow-hover: 0 20px 45px -5px rgba(12, 59, 46, 0.16);
-  
-  /* Typography Tokens */
-  --font-heading: 'YDYoonche', 'Outfit', Georgia, serif;
-  --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 *, *::before, *::after {
@@ -56,79 +47,60 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  height: 100%;
 }
 
 body {
-  background-color: var(--bg-monolith-main);
-  color: var(--text-sub);
   font-family: var(--font-body);
-  font-weight: 400; /* Poppins Regular for all body text */
-  line-height: 1.65;
+  font-weight: 400;
+  background-color: var(--bg-monolith-main);
+  color: var(--text-main);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg-monolith-main);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #A6D689;
-  border-radius: var(--radius-full);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-sprout);
-}
-
-/* Headings: YDYoonche SemiBold */
-h1, h2, h3, h4, h5, h6,
-.canvas-heading,
-.sticky-headline,
-.axiol-section-title h2 {
+/* Headings font enforcement */
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 600; /* SemiBold */
-  line-height: 1.2;
+  font-weight: 700;
   color: var(--text-main);
   letter-spacing: -0.01em;
-}
-
-p, span, div, li, a, button, input, select, textarea, label {
-  font-family: var(--font-body);
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-ul {
+ul, ol {
   list-style: none;
 }
 
-/* Responsive Container */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Layout Utilities */
 .axiol-container {
   width: 100%;
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
   @media (max-width: 992px) {
-    padding: 0 1.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
-  @media (max-width: 576px) {
-    padding: 0 1rem;
+  @media (max-width: 480px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -138,7 +110,7 @@ ul {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 
-  @media (max-width: 868px) {
+  @media (max-width: 992px) {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
@@ -174,11 +146,12 @@ ul {
   }
 }
 
-/* Page Banner Responsive Layout */
+/* Page Banner Styling - Signature Dark Forest Green Theme */
 .page-banner {
   padding: 4rem 0 3.5rem 0;
-  background: linear-gradient(135deg, #0C3B2E 0%, #154D3D 100%);
-  color: #FFFFFF;
+  background: linear-gradient(135deg, #0C3B2E 0%, #154D3D 100%) !important;
+  color: #FFFFFF !important;
+  border-bottom: 1px solid rgba(98, 184, 41, 0.3);
 
   @media (max-width: 768px) {
     padding: 2.5rem 0 2rem 0;
@@ -198,14 +171,14 @@ ul {
 
   .banner-text {
     h1 {
-      color: #FFFFFF;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: #FFFFFF !important;
+      font-size: clamp(1.8rem, 4vw, 3rem);
       margin: 0.8rem 0;
       line-height: 1.15;
     }
 
     .lead-text {
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.92) !important;
       font-size: clamp(0.95rem, 1.8vw, 1.12rem);
       line-height: 1.65;
       margin-bottom: 1.5rem;
@@ -218,11 +191,12 @@ ul {
 
       .b-chip {
         font-size: 0.82rem;
+        font-weight: 700;
         background: rgba(255, 255, 255, 0.12);
         padding: 0.4rem 0.9rem;
         border-radius: var(--radius-full);
         border: 1px solid rgba(255, 255, 255, 0.25);
-        color: #FFFFFF;
+        color: #FFFFFF !important;
         display: inline-flex;
         align-items: center;
         gap: 0.4rem;
@@ -265,7 +239,7 @@ ul {
 
         .title {
           font-size: 0.92rem;
-          color: #FFFFFF;
+          color: #FFFFFF !important;
           font-weight: 600;
         }
       }
@@ -320,7 +294,7 @@ ul {
   border-radius: var(--radius-full);
   font-family: var(--font-body);
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   background: rgba(98, 184, 41, 0.15);
@@ -344,7 +318,15 @@ ul {
   }
 }
 
-/* Touch-Friendly Buttons: Poppins Medium / SemiBold */
+.page-banner .axiol-badge {
+  background: rgba(98, 184, 41, 0.25);
+  color: #FFFFFF !important;
+  border: 1px solid rgba(98, 184, 41, 0.5);
+
+  i { color: #62B829; }
+}
+
+/* Touch-Friendly Buttons */
 .axiol-btn {
   display: inline-flex;
   align-items: center;
@@ -404,7 +386,7 @@ ul {
   }
 }
 
-/* Touch-Friendly Input Elements (16px prevents iOS zoom) */
+/* Touch-Friendly Input Elements */
 .axiol-input, select.axiol-input, textarea.axiol-input {
   width: 100%;
   padding: 0.85rem 1.1rem;

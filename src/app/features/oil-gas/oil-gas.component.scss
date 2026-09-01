@@ -1,45 +1,51 @@
 .page-banner.amber-theme, .page-banner {
-  padding: 4.8rem 0 4.2rem 0;
-  background: linear-gradient(135deg, rgba(27, 67, 50, 0.08) 0%, rgba(244, 247, 244, 1) 100%);
-  border-bottom: 1px solid var(--border-editorial);
+  padding: 4rem 0 3.5rem 0;
+  background: linear-gradient(135deg, #0C3B2E 0%, #154D3D 100%);
+  color: #FFFFFF;
+  border-bottom: 1px solid rgba(98, 184, 41, 0.3);
+
+  @media (max-width: 768px) {
+    padding: 2.5rem 0 2rem 0;
+  }
 
   .banner-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3.5rem;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
     align-items: center;
 
     @media (max-width: 992px) {
       grid-template-columns: 1fr;
+      gap: 2rem;
     }
   }
 
   .banner-text {
     h1 {
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
-      margin: 1.2rem 0;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin: 0.8rem 0;
       line-height: 1.15;
+      color: #FFFFFF !important;
     }
 
     .lead-text {
-      font-size: 1.15rem;
-      color: var(--text-sub);
-      line-height: 1.7;
-      margin-bottom: 2rem;
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.9) !important;
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
     }
   }
 
   .banner-media {
-    padding: 0.4rem;
-    border-radius: var(--radius-lg);
+    padding: 0;
 
     .media-frame {
       position: relative;
       border-radius: var(--radius-md);
       overflow: hidden;
       aspect-ratio: 16 / 10;
-      border: 1px solid var(--border-editorial);
-      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: var(--shadow-hover);
 
       img {
         width: 100%;
@@ -54,8 +60,8 @@
         position: absolute;
         bottom: 0;
         inset-x: 0;
-        padding: 1.5rem;
-        background: linear-gradient(to top, rgba(15, 41, 30, 0.95) 0%, rgba(15, 41, 30, 0) 100%);
+        padding: 1.2rem;
+        background: linear-gradient(to top, rgba(12, 59, 46, 0.95) 0%, rgba(12, 59, 46, 0) 100%);
         display: flex;
         flex-direction: column;
         gap: 0.25rem;
@@ -79,16 +85,20 @@
 }
 
 .section-fuel-architecture {
-  padding: 6rem 0;
+  padding: 4rem 0;
+
+  @media (max-width: 768px) {
+    padding: 2.5rem 0;
+  }
 
   .axiol-section-title {
-    margin-bottom: 3.2rem;
+    margin-bottom: 2.5rem;
   }
 
   .fuel-steps-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 1.8rem;
+    gap: 1.5rem;
 
     @media (max-width: 1024px) {
       grid-template-columns: repeat(3, 1fr);
@@ -105,7 +115,7 @@
       border: 1px solid var(--border-editorial);
       border-top: 3px solid var(--accent-sprout);
       border-radius: var(--radius-md);
-      padding: 2.2rem 1.4rem 1.8rem 1.4rem;
+      padding: 1.8rem 1.2rem 1.5rem 1.2rem;
       box-shadow: var(--shadow-card);
 
       .step-num {
@@ -119,21 +129,21 @@
       }
 
       .step-icon {
-        width: 48px;
-        height: 48px;
+        width: 44px;
+        height: 44px;
         border-radius: var(--radius-full);
-        background: rgba(45, 106, 79, 0.12);
+        background: rgba(98, 184, 41, 0.15);
         color: var(--accent-sprout);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.25rem;
-        margin: 0 auto 1.2rem auto;
+        font-size: 1.15rem;
+        margin: 0 auto 1rem auto;
       }
 
       h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.05rem;
+        margin-bottom: 0.4rem;
       }
 
       p {
@@ -147,18 +157,22 @@
 
 /* Turnkey Scope Grid */
 .section-capabilities {
-  padding: 6rem 0;
+  padding: 4rem 0;
   background: var(--bg-monolith-main);
   border-top: 1px solid var(--border-editorial);
 
+  @media (max-width: 768px) {
+    padding: 2.5rem 0;
+  }
+
   .axiol-section-title {
-    margin-bottom: 3.2rem;
+    margin-bottom: 2.5rem;
   }
 
   .grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.2rem;
+    gap: 1.8rem;
 
     @media (max-width: 992px) {
       grid-template-columns: repeat(2, 1fr);
@@ -181,7 +195,7 @@
 
     .scope-img-frame {
       position: relative;
-      height: 220px;
+      height: 200px;
       overflow: hidden;
 
       img {
@@ -195,7 +209,7 @@
         position: absolute;
         top: 1rem;
         left: 1rem;
-        background: rgba(15, 41, 30, 0.88);
+        background: rgba(12, 59, 46, 0.9);
         backdrop-filter: blur(8px);
         color: var(--accent-mint);
         padding: 0.35rem 0.85rem;
@@ -212,7 +226,7 @@
     }
 
     .scope-card-body {
-      padding: 2.2rem 1.8rem;
+      padding: 1.8rem 1.4rem;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
@@ -220,24 +234,24 @@
       h3 {
         font-family: var(--font-heading);
         font-weight: 800;
-        font-size: 1.25rem;
-        margin-bottom: 0.6rem;
+        font-size: 1.18rem;
+        margin-bottom: 0.5rem;
         color: var(--text-main);
       }
 
       p {
-        font-size: 0.92rem;
+        font-size: 0.88rem;
         color: var(--text-sub);
         line-height: 1.6;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.2rem;
       }
 
       .scope-features-list {
         margin-top: auto;
         display: flex;
         flex-direction: column;
-        gap: 0.55rem;
-        padding-top: 1.2rem;
+        gap: 0.5rem;
+        padding-top: 1rem;
         border-top: 1px solid rgba(45, 106, 79, 0.15);
 
         li {
@@ -257,7 +271,7 @@
     }
 
     &:hover {
-      transform: translateY(-6px);
+      transform: translateY(-5px);
       border-color: var(--accent-sprout);
       box-shadow: var(--shadow-hover);
 
