@@ -5,6 +5,10 @@
 .monolith-master-container {
   padding: 3.5rem 0 6.5rem 0;
 
+  @media (max-width: 992px) {
+    padding: 2rem 0 4rem 0;
+  }
+
   .monolith-layout-grid {
     display: grid;
     grid-template-columns: 360px 1fr;
@@ -13,7 +17,7 @@
 
     @media (max-width: 1024px) {
       grid-template-columns: 1fr;
-      gap: 3rem;
+      gap: 2.5rem;
     }
   }
 
@@ -34,6 +38,10 @@
       padding: 2.2rem;
       box-shadow: var(--shadow-card);
 
+      @media (max-width: 768px) {
+        padding: 1.4rem;
+      }
+
       .brand-monolith-tag {
         display: inline-flex;
         align-items: center;
@@ -48,7 +56,7 @@
       }
 
       .sticky-headline {
-        font-size: clamp(2rem, 3.5vw, 2.5rem);
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
         font-weight: 800;
         margin-bottom: 1rem;
         line-height: 1.15;
@@ -72,6 +80,16 @@
         margin-bottom: 1.8rem;
         padding-bottom: 1.5rem;
         border-bottom: 1px solid rgba(45, 106, 79, 0.15);
+
+        @media (max-width: 640px) {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.4rem;
+        }
+
+        @media (max-width: 480px) {
+          grid-template-columns: 1fr;
+        }
 
         .dir-item {
           display: flex;
@@ -141,10 +159,14 @@
   .monolith-right-canvas {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 4rem;
+
+    @media (max-width: 768px) {
+      gap: 3rem;
+    }
 
     .canvas-section {
-      scroll-margin-top: 120px;
+      scroll-margin-top: 100px;
 
       .section-badge-row {
         display: flex;
@@ -162,21 +184,21 @@
       }
 
       .canvas-heading {
-        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+        font-size: clamp(1.6rem, 3.5vw, 2.4rem);
         margin-bottom: 0.8rem;
       }
 
       .canvas-body-lg {
-        font-size: 1.12rem;
+        font-size: 1.05rem;
         color: var(--text-sub);
         line-height: 1.7;
-        margin-bottom: 2rem;
+        margin-bottom: 1.8rem;
       }
 
       .canvas-sub {
-        font-size: 1.05rem;
+        font-size: 1rem;
         color: var(--text-sub);
-        margin-bottom: 2.5rem;
+        margin-bottom: 2rem;
       }
     }
 
@@ -187,6 +209,10 @@
       overflow: hidden;
       aspect-ratio: 16 / 9;
       border: 1px solid var(--border-editorial);
+
+      @media (max-width: 640px) {
+        aspect-ratio: 4 / 3;
+      }
 
       .media-img {
         width: 100%;
@@ -204,9 +230,13 @@
         bottom: 0;
         left: 0;
         right: 0;
-        padding: 1.8rem;
+        padding: 1.4rem;
         background: linear-gradient(to top, rgba(15, 41, 30, 0.95) 0%, rgba(15, 41, 30, 0) 100%);
         color: #FFFFFF;
+
+        @media (max-width: 480px) {
+          padding: 1rem;
+        }
 
         .c-tag {
           font-size: 0.75rem;
@@ -218,9 +248,13 @@
         }
 
         p {
-          font-size: 1.02rem;
+          font-size: 0.92rem;
           margin: 0.2rem 0 0 0;
           color: #FFFFFF;
+
+          @media (max-width: 480px) {
+            font-size: 0.84rem;
+          }
         }
       }
     }
@@ -229,10 +263,11 @@
     .pillars-photo-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 2.2rem;
+      gap: 2rem;
 
-      @media (max-width: 640px) {
+      @media (max-width: 768px) {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
 
       .pillar-photo-card {
@@ -277,13 +312,13 @@
         }
 
         .p-card-body {
-          padding: 2.2rem 1.8rem;
+          padding: 1.8rem 1.4rem;
           display: flex;
           flex-direction: column;
           flex-grow: 1;
 
           h3 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             margin-bottom: 0.3rem;
           }
 
@@ -299,14 +334,14 @@
             font-size: 0.9rem;
             color: var(--text-sub);
             line-height: 1.6;
-            margin-bottom: 1.4rem;
+            margin-bottom: 1.2rem;
           }
 
           .p-bullets {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            margin-bottom: 1.6rem;
+            margin-bottom: 1.4rem;
 
             li {
               font-size: 0.84rem;
@@ -338,7 +373,7 @@
         }
 
         &:hover {
-          transform: translateY(-5px);
+          transform: translateY(-4px);
           box-shadow: var(--shadow-hover);
           border-color: var(--accent-sprout);
         }
@@ -348,24 +383,29 @@
     /* Section 03 Growth Active Card with Photo Frame */
     .growth-tabs-bar {
       display: flex;
-      gap: 0.8rem;
-      margin-bottom: 2rem;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
       flex-wrap: wrap;
 
       .growth-tab {
         display: flex;
         align-items: center;
         gap: 0.6rem;
-        padding: 0.85rem 1.5rem;
+        padding: 0.75rem 1.2rem;
         border-radius: var(--radius-sm);
         background: var(--bg-monolith-card);
         border: 1px solid var(--border-editorial);
         font-family: var(--font-heading);
         font-weight: 700;
-        font-size: 0.88rem;
+        font-size: 0.84rem;
         color: var(--text-sub);
         cursor: pointer;
         transition: all 0.3s ease;
+
+        @media (max-width: 640px) {
+          width: 100%;
+          justify-content: flex-start;
+        }
 
         .g-step { color: var(--accent-sprout); }
 
@@ -388,7 +428,7 @@
 
       .g-stage-img-frame {
         position: relative;
-        height: 230px;
+        height: 220px;
         overflow: hidden;
 
         .g-stage-photo {
@@ -412,29 +452,37 @@
       }
 
       .g-card-content {
-        padding: 2.6rem;
+        padding: 1.8rem;
+
+        @media (max-width: 576px) {
+          padding: 1.25rem;
+        }
 
         h3 {
-          font-size: 1.6rem;
+          font-size: 1.4rem;
           margin-bottom: 0.8rem;
         }
 
         p {
-          font-size: 1.02rem;
+          font-size: 0.98rem;
           color: var(--text-sub);
           line-height: 1.6;
-          margin-bottom: 1.8rem;
+          margin-bottom: 1.5rem;
         }
 
         .g-metrics-grid {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 1.4rem;
-          margin-bottom: 2rem;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+          margin-bottom: 1.5rem;
+
+          @media (max-width: 540px) {
+            grid-template-columns: 1fr;
+          }
 
           .g-m-box {
             background: var(--bg-monolith-main);
-            padding: 1.3rem;
+            padding: 1.1rem;
             border-radius: var(--radius-sm);
             border: 1px solid rgba(45, 106, 79, 0.15);
 
@@ -450,7 +498,7 @@
             .val {
               font-family: var(--font-heading);
               font-weight: 800;
-              font-size: 1.25rem;
+              font-size: 1.15rem;
               color: var(--accent-sprout);
             }
 
@@ -468,12 +516,12 @@
           .tags-flex {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.6rem;
+            gap: 0.5rem;
 
             .d-tag {
-              font-size: 0.82rem;
+              font-size: 0.8rem;
               background: var(--bg-monolith-main);
-              padding: 0.4rem 0.85rem;
+              padding: 0.35rem 0.75rem;
               border-radius: var(--radius-sm);
               border: 1px solid var(--border-editorial);
               color: var(--text-main);
@@ -494,17 +542,22 @@
         background: var(--bg-monolith-card);
         border: 1px solid var(--border-editorial);
         border-radius: var(--radius-md);
-        padding: 1.4rem 1.8rem;
+        padding: 1.2rem 1.4rem;
         display: flex;
         align-items: flex-start;
-        gap: 1.5rem;
+        gap: 1.2rem;
         cursor: pointer;
         transition: all 0.3s ease;
+
+        @media (max-width: 576px) {
+          flex-direction: column;
+          gap: 0.8rem;
+        }
 
         .s-left {
           display: flex;
           align-items: center;
-          gap: 1rem;
+          gap: 0.8rem;
 
           .s-num {
             font-family: var(--font-heading);
@@ -514,21 +567,21 @@
           }
 
           .s-icon {
-            width: 42px;
-            height: 42px;
+            width: 40px;
+            height: 40px;
             border-radius: var(--radius-sm);
             background: var(--accent-sand);
             color: var(--accent-sprout);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
           }
         }
 
         .s-right {
           h4 {
-            font-size: 1.08rem;
+            font-size: 1.05rem;
             margin-bottom: 0.2rem;
           }
 
@@ -539,10 +592,10 @@
           }
 
           .s-desc {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             color: var(--text-sub);
             line-height: 1.6;
-            margin-top: 0.8rem;
+            margin-top: 0.6rem;
           }
         }
 
@@ -561,17 +614,18 @@
     .gallery-photo-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.8rem;
+      gap: 1.5rem;
 
       @media (max-width: 640px) {
         grid-template-columns: 1fr;
+        gap: 1.2rem;
       }
 
       .gallery-photo-card {
         position: relative;
         border-radius: var(--radius-md);
         overflow: hidden;
-        height: 240px;
+        height: 220px;
         border: 1px solid var(--border-editorial);
 
         img {
@@ -588,7 +642,7 @@
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
-          padding: 1.5rem;
+          padding: 1.2rem;
           color: #FFFFFF;
 
           .tag {
@@ -600,7 +654,7 @@
 
           h4 {
             font-family: var(--font-heading);
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: #FFFFFF;
             margin: 0.2rem 0 0 0;
           }
