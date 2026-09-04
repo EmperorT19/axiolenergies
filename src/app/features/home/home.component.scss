@@ -16,8 +16,17 @@
     align-items: start;
 
     @media (max-width: 1024px) {
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
       gap: 2.5rem;
+
+      .monolith-right-canvas {
+        order: 1;
+      }
+
+      .monolith-left-sticky {
+        order: 2;
+      }
     }
   }
 
