@@ -92,15 +92,20 @@
               <div class="i-icon"><i class="fa-solid fa-location-dot"></i></div>
               <div>
                 <h4>Corporate Headquarters</h4>
-                <p>{{ dataService.corporateOverview.headOffice }}</p>
+                <div class="formatted-address-block">
+                  <div>KMA Centre, Block B, Suite 2.2</div>
+                  <div>Mara Road, Upperhill</div>
+                  <div>P.O.Box <span class="sprout-code">21372-00100</span></div>
+                  <div>Nairobi-Kenya</div>
+                </div>
               </div>
             </div>
 
             <div class="info-item">
               <div class="i-icon"><i class="fa-solid fa-envelope"></i></div>
               <div>
-                <h4>Direct Inquiries</h4>
-                <p>{{ dataService.corporateOverview.email }}</p>
+                <h4>Direct Email Inquiries</h4>
+                <p><a [href]="'mailto:' + dataService.corporateOverview.email" class="active-contact-link">{{ dataService.corporateOverview.email }}</a></p>
               </div>
             </div>
 
@@ -108,7 +113,19 @@
               <div class="i-icon"><i class="fa-solid fa-phone"></i></div>
               <div>
                 <h4>Corporate Phone</h4>
-                <p>{{ dataService.corporateOverview.phone }}</p>
+                <p><a [href]="'tel:' + dataService.corporateOverview.whatsappPhone" class="active-contact-link">{{ dataService.corporateOverview.phone }}</a></p>
+              </div>
+            </div>
+
+            <div class="info-item whatsapp-item">
+              <div class="i-icon wa-icon"><i class="fa-brands fa-whatsapp"></i></div>
+              <div>
+                <h4>WhatsApp Direct Connect</h4>
+                <p>
+                  <a [href]="dataService.corporateOverview.whatsappUrl" target="_blank" rel="noopener noreferrer" class="wa-action-btn">
+                    Chat with Engineering on WhatsApp <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </p>
               </div>
             </div>
           </div>

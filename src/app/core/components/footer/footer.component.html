@@ -48,21 +48,28 @@
       <div class="footer-contact-col">
         <h4>Corporate Headquarters</h4>
         <ul class="contact-info">
-          <li>
+          <li class="address-block-li">
             <i class="fa-solid fa-location-dot icon"></i>
-            <span>{{ dataService.corporateOverview.headOffice }}</span>
+            <div class="formatted-address">
+              <div>KMA Centre, Block B, Suite 2.2</div>
+              <div>Mara Road, Upperhill</div>
+              <div>P.O.Box <span class="text-sprout-highlight">21372-00100</span></div>
+              <div>Nairobi-Kenya</div>
+            </div>
           </li>
           <li>
             <i class="fa-solid fa-envelope icon"></i>
-            <span>{{ dataService.corporateOverview.email }}</span>
+            <a [href]="'mailto:' + dataService.corporateOverview.email" class="contact-link">{{ dataService.corporateOverview.email }}</a>
           </li>
           <li>
             <i class="fa-solid fa-phone icon"></i>
-            <span>{{ dataService.corporateOverview.phone }}</span>
+            <a [href]="'tel:' + dataService.corporateOverview.whatsappPhone" class="contact-link">{{ dataService.corporateOverview.phone }}</a>
           </li>
           <li>
-            <i class="fa-solid fa-shield-cat icon"></i>
-            <span>Safety First • Engineering Discipline</span>
+            <i class="fa-brands fa-whatsapp icon whatsapp-icon"></i>
+            <a [href]="dataService.corporateOverview.whatsappUrl" target="_blank" rel="noopener noreferrer" class="contact-link whatsapp-btn-link">
+              Connect on WhatsApp <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
           </li>
         </ul>
       </div>

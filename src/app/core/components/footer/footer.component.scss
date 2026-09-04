@@ -164,20 +164,71 @@
     .contact-info {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.1rem;
 
       li {
         display: flex;
         align-items: flex-start;
         gap: 0.8rem;
-        font-size: 0.88rem;
-        color: #A3C0B0;
+        font-size: 0.9rem;
+        color: #D1E0D7;
+        line-height: 1.5;
 
         .icon {
           color: var(--accent-mint);
-          font-size: 1rem;
-          margin-top: 0.2rem;
+          font-size: 1.05rem;
+          margin-top: 0.25rem;
           flex-shrink: 0;
+
+          &.whatsapp-icon {
+            color: #25D366;
+          }
+        }
+
+        .formatted-address {
+          display: flex;
+          flex-direction: column;
+          gap: 0.2rem;
+          font-family: var(--font-heading, sans-serif);
+          font-weight: 500;
+          color: #E2ECE5;
+
+          .text-sprout-highlight {
+            color: #52B788;
+            font-weight: 700;
+          }
+        }
+
+        .contact-link {
+          color: #D1E0D7;
+          text-decoration: none;
+          transition: all 0.3s ease;
+
+          &:hover {
+            color: #52B788;
+            text-decoration: underline;
+          }
+
+          &.whatsapp-btn-link {
+            color: #25D366;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+
+            i {
+              font-size: 0.75rem;
+              transition: transform 0.3s ease;
+            }
+
+            &:hover {
+              color: #40E0D0;
+
+              i {
+                transform: translate(2px, -2px);
+              }
+            }
+          }
         }
       }
     }

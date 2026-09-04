@@ -269,25 +269,26 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-bottom: 1rem;
+      padding-bottom: 0.85rem;
       border-bottom: 1px solid rgba(12, 59, 46, 0.15);
       margin-bottom: 1.25rem;
 
-      .drawer-title {
-        font-family: var(--font-heading);
-        font-size: 0.85rem;
-        font-weight: 800;
-        letter-spacing: 0.1em;
-        color: var(--accent-sprout);
+      .drawer-logo-wrap {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        justify-content: center;
+        height: 54px;
+        width: 170px;
+        overflow: hidden;
+        position: relative;
 
-        .drawer-logo-icon {
-          width: 48px;
-          height: 48px;
+        .drawer-brand-logo-img {
+          width: 100%;
+          height: 100%;
           object-fit: contain;
-          transform: scale(2.25);
+          transform: scale(2.35);
+          mix-blend-mode: multiply;
+          filter: contrast(1.08);
         }
       }
 

@@ -23,8 +23,17 @@ export class AxiolDataService {
   readonly corporateOverview = {
     tagline: "INTEGRATED ENERGY. ENGINEERED FOR THE FUTURE.",
     companyName: "Axiol Energies Limited",
-    headOffice: "KMA Centre Block B, Upperhill, Nairobi, Kenya",
+    headOffice: "KMA Centre, Block B, Suite 2.2",
+    addressLines: [
+      "KMA Centre, Block B, Suite 2.2",
+      "Mara Road, Upperhill",
+      "P.O.Box 21372-00100",
+      "Nairobi-Kenya"
+    ],
+    poBoxNumber: "21372-00100",
     phone: "+254 715 296 278",
+    whatsappPhone: "+254715296278",
+    whatsappUrl: "https://wa.me/254715296278?text=Hello%20Axiol%20Energies%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.",
     email: "contact@axiolenergies.com",
     summary: "Axiol Energies Limited is an integrated energy and infrastructure company delivering conventional energy, renewable power, electrical infrastructure and human capacity solutions across Africa.",
     vision: "To be a trusted African energy and infrastructure partner enabling reliable, affordable and sustainable growth.",
