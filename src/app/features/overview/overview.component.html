@@ -108,7 +108,7 @@
         @for (stage of dataService.valueChainStages; track stage.step) {
           <div class="integration-card">
             <div class="card-top">
-              <span class="step-num">0{{ stage.step }}</span>
+              <span class="step-num">{{ stage.step }}</span>
               <div class="icon-circle"><i class="fa-solid" [ngClass]="stage.icon"></i></div>
             </div>
             <h4>{{ stage.title }}</h4>
