@@ -84,13 +84,16 @@
     </div>
   </div>
 
+  <!-- Mobile Drawer Backdrop Mask Overlay -->
+  <div class="drawer-backdrop" [class.open]="mobileMenuOpen" (click)="closeMobileMenu()"></div>
+
   <!-- Mobile Drawer Menu with Photo Thumbnails -->
   <div class="mobile-drawer" [class.open]="mobileMenuOpen">
     <div class="drawer-header">
-      <div class="drawer-logo-wrap">
+      <a routerLink="/" (click)="closeMobileMenu()" class="drawer-logo-wrap" title="Axiol Energies Logo">
         <img src="axiolenergies.jpeg" alt="Axiol Energies Logo" class="drawer-brand-logo-img">
-      </div>
-      <button class="close-btn" (click)="closeMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
+      </a>
+      <button class="close-btn" (click)="closeMobileMenu()" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <nav class="mobile-nav">
       <a routerLink="/" (click)="closeMobileMenu()"><i class="fa-solid fa-house"></i> Home</a>
