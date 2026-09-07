@@ -1,12 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { AxiolDataService } from '../../core/services/axiol-data.service';
 
 @Component({
   selector: 'app-integrated-solutions',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './integrated-solutions.component.html',
   styleUrls: ['./integrated-solutions.component.scss']
 })

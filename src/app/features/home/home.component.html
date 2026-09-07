@@ -84,7 +84,7 @@
 
           <!-- Picture Room: Real Hero Asset Stack -->
           <div class="editorial-hero-media">
-            <img src="assets/images/axiol-hero-banner.png" alt="Axiol Integrated Complex" class="media-img" onerror="this.src='https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80'">
+            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80" alt="Axiol Integrated Complex" class="media-img">
             <div class="media-caption">
               <span class="c-tag"><i class="fa-solid fa-camera"></i> AXIOL INFRASTRUCTURE PORTFOLIO</span>
               <p>Pan-African Infrastructure: Solar PV • BESS Storage • Petroleum Depots • 132kV Substations</p>
@@ -108,7 +108,7 @@
             <!-- Pillar 1 Photo Card -->
             <div class="pillar-photo-card">
               <div class="p-img-box">
-                <img src="assets/images/oil-gas-depot.png" alt="Oil & Gas Infrastructure" onerror="this.src='https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80'">
+                <img src="https://res.cloudinary.com/duwyaucf1/image/upload/v1788765614/jimmy-desplanques-URWS5R20FEM-unsplash_oil_gfxyah.jpg" alt="Oil & Gas Infrastructure">
                 <span class="p-badge-tag sprout">Pillar 01</span>
               </div>
               <div class="p-card-body">
@@ -128,7 +128,7 @@
             <!-- Pillar 2 Photo Card -->
             <div class="pillar-photo-card">
               <div class="p-img-box">
-                <img src="assets/images/solar-bess-farm.png" alt="Renewable Energy" onerror="this.src='https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80'">
+                <img src="https://res.cloudinary.com/duwyaucf1/image/upload/v1788765614/american-public-power-association-XGAZzyLzn18-unsplash_renewable_energy_ivias6.jpg" alt="Renewable Energy">
                 <span class="p-badge-tag sprout">Pillar 02</span>
               </div>
               <div class="p-card-body">
@@ -148,7 +148,7 @@
             <!-- Pillar 3 Photo Card -->
             <div class="pillar-photo-card">
               <div class="p-img-box">
-                <img src="assets/images/electrical-substation.png" alt="Electrical Infrastructure" onerror="this.src='https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=800&q=80'">
+                <img src="https://res.cloudinary.com/duwyaucf1/image/upload/v1788767172/jan-huber-ZWH6Wm4rUw4-unsplash_electric_e5immi.jpg" alt="Electrical Infrastructure">
                 <span class="p-badge-tag forest">Pillar 03</span>
               </div>
               <div class="p-card-body">
@@ -168,7 +168,7 @@
             <!-- Pillar 4 Photo Card -->
             <div class="pillar-photo-card">
               <div class="p-img-box">
-                <img src="assets/images/technical-training.png" alt="Capacity Building" onerror="this.src='https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=800&q=80'">
+                <img src="https://res.cloudinary.com/duwyaucf1/image/upload/v1788765614/iwaria-inc-Q6KzWe-lq9Y-unsplash_training_nsd6hu.jpg" alt="Capacity Building">
                 <span class="p-badge-tag mint">Pillar 04</span>
               </div>
               <div class="p-card-body">
@@ -215,12 +215,11 @@
             <!-- Picture Room: Growth Stage Image Frame -->
             <div class="g-stage-img-frame">
               <img 
-                [src]="activeGrowthIndex === 0 ? 'assets/images/oil-gas-depot.png' : 
-                      activeGrowthIndex === 1 ? 'assets/images/solar-bess-farm.png' : 
-                      'assets/images/axiol-hero-banner.png'" 
+                [src]="activeGrowthIndex === 0 ? 'https://res.cloudinary.com/duwyaucf1/image/upload/v1788767531/julian-rendell-T01JmyLS1Ig-unsplash_oil_2_ybwenn.jpg' : 
+                      activeGrowthIndex === 1 ? 'https://res.cloudinary.com/duwyaucf1/image/upload/v1788767528/vanya-smythe-CH7kRmyBQ4I-unsplash_renewable_2_jzn1pm.jpg' : 
+                      'https://res.cloudinary.com/duwyaucf1/image/upload/v1788767529/tim-foster-CRsDbS_pHkE-unsplash_zero_carbon_qtxe0n.jpg'" 
                 [alt]="dataService.growthPhases[activeGrowthIndex].title" 
-                class="g-stage-photo"
-                onerror="this.src='https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80'">
+                class="g-stage-photo">
 
               <div class="g-stage-tag-float">
                 <i class="fa-solid fa-leaf"></i> {{ dataService.growthPhases[activeGrowthIndex].badge }}
@@ -229,64 +228,46 @@
 
             <div class="g-card-content">
               <h3>{{ dataService.growthPhases[activeGrowthIndex].title }}</h3>
-              <p>{{ dataService.growthPhases[activeGrowthIndex].description }}</p>
+              <p class="g-desc">{{ dataService.growthPhases[activeGrowthIndex].description }}</p>
 
-              <div class="g-metrics-grid">
-                <div class="g-m-box">
-                  <span class="lbl">Baseload Target</span>
-                  <span class="val">{{ dataService.growthPhases[activeGrowthIndex].metric }}</span>
-                </div>
-                <div class="g-m-box forest">
-                  <span class="lbl">Decarbonization Impact</span>
-                  <span class="val">{{ dataService.growthPhases[activeGrowthIndex].decarbonization }}</span>
-                </div>
-              </div>
-
-              <div class="g-highlights-list">
-                <h4>Core Highlights:</h4>
-                <div class="tags-flex">
-                  @for (item of dataService.growthPhases[activeGrowthIndex].highlights; track item) {
-                    <span class="d-tag">{{ item }}</span>
-                  }
-                </div>
+              <div class="g-kpis-grid">
+                @for (item of dataService.growthPhases[activeGrowthIndex].highlights; track item) {
+                  <div class="kpi-chip">
+                    <i class="fa-solid fa-circle-check"></i> {{ item }}
+                  </div>
+                }
               </div>
             </div>
           </div>
         </section>
 
-        <!-- SECTION 04: TURNKEY VALUE CHAIN PIPELINE -->
-        <section id="turnkey-pipeline" class="canvas-section">
+        <!-- SECTION 04: VALUE CHAIN INFRASTRUCTURE STEPPER -->
+        <section id="value-chain" class="canvas-section">
           <div class="section-badge-row">
-            <span class="axiol-badge"><i class="fa-solid fa-timeline"></i> Section 04</span>
-            <span class="section-title-sm">Turnkey Execution</span>
+            <span class="axiol-badge forest"><i class="fa-solid fa-diagram-project"></i> Section 04</span>
+            <span class="section-title-sm">Turnkey Execution Model</span>
           </div>
 
-          <h2 class="canvas-heading">6-STAGE INTEGRATED VALUE CHAIN</h2>
-          <p class="canvas-sub">Seamless engagement across every project phase from origination to operation.</p>
+          <h2 class="canvas-heading">END-TO-END PROJECT LIFECYCLE</h2>
+          <p class="canvas-sub">From feasibility screening through to long-term asset management.</p>
 
-          <div class="value-chain-stepper">
-            @for (stage of dataService.valueChainStages; track stage.step; let idx = $index) {
-              <div 
-                class="step-card-item" 
-                [class.active]="activeStageIndex === idx"
-                (click)="setActiveStage(idx)">
-                <div class="s-left">
-                  <span class="s-num">{{ stage.step }}</span>
-                  <div class="s-icon"><i class="fa-solid" [ngClass]="stage.icon"></i></div>
+          <div class="stepper-cards-grid">
+            @for (step of dataService.valueChainStages; track step.step) {
+              <div class="step-card">
+                <div class="step-header">
+                  <span class="step-num">{{ step.step }}</span>
+                  <div class="step-icon-badge">
+                    <i class="fa-solid" [ngClass]="step.icon"></i>
+                  </div>
                 </div>
-                <div class="s-right">
-                  <h4>{{ stage.title }}</h4>
-                  <span class="s-action">{{ stage.action }}</span>
-                  @if (activeStageIndex === idx) {
-                    <p class="s-desc">{{ stage.description }}</p>
-                  }
-                </div>
+                <h3>{{ step.title }}</h3>
+                <p>{{ step.description }}</p>
               </div>
             }
           </div>
         </section>
 
-        <!-- SECTION 05: EXPANDED CAPABILITY GALLERY -->
+        <!-- SECTION 05: FIELD EVIDENCE PHOTO GALLERY -->
         <section id="capability-gallery" class="canvas-section">
           <div class="section-badge-row">
             <span class="axiol-badge mint"><i class="fa-solid fa-camera"></i> Section 05</span>
@@ -299,7 +280,7 @@
           <!-- Picture Room: 4-Column Photo Grid -->
           <div class="gallery-photo-grid">
             <div class="gallery-photo-card">
-              <img src="assets/images/solar-bess-farm.png" alt="50MW Solar PV" onerror="this.src='https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80'">
+              <img src="https://res.cloudinary.com/duwyaucf1/image/upload/v1788768025/raphael-cruz-IwY-27ceRCA-unsplash_renewable_3_zxqhog.jpg" alt="50MW Solar PV">
               <div class="photo-info">
                 <span class="tag">RENEWABLE GENERATION</span>
                 <h4>50MW Solar PV Array & BESS Farm</h4>
@@ -307,7 +288,7 @@
             </div>
 
             <div class="gallery-photo-card">
-              <img src="assets/images/oil-gas-depot.png" alt="Mining Fuel Depot" onerror="this.src='https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80'">
+              <img src="https://res.cloudinary.com/duwyaucf1/image/upload/v1788768025/christian-harb-76yzygeNLT0-unsplash_oil_3_nq2dvv.jpg" alt="Mining Fuel Depot">
               <div class="photo-info">
                 <span class="tag">PETROLEUM INFRASTRUCTURE</span>
                 <h4>4,000,000L Heavy Mining Fuel Depot</h4>
@@ -315,7 +296,7 @@
             </div>
 
             <div class="gallery-photo-card">
-              <img src="assets/images/electrical-substation.png" alt="132kV Substation" onerror="this.src='https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=800&q=80'">
+              <img src="https://res.cloudinary.com/duwyaucf1/image/upload/v1788768024/andrey-metelev-qpAOxji4dAo-unsplash_electric_3_ymfamw.jpg" alt="132kV Substation">
               <div class="photo-info">
                 <span class="tag">POWER NETWORKS</span>
                 <h4>132kV Substation & Telemetry SCADA Relays</h4>
@@ -323,7 +304,7 @@
             </div>
 
             <div class="gallery-photo-card">
-              <img src="assets/images/technical-training.png" alt="Training Center" onerror="this.src='https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=800&q=80'">
+              <img src="https://res.cloudinary.com/duwyaucf1/image/upload/v1788768021/ninthgrid-YsJUxCIW14U-unsplash_training_2_m3w1jw.jpg" alt="Training Center">
               <div class="photo-info">
                 <span class="tag">CAPACITY BUILDING</span>
                 <h4>Technical Workshop & OEM Certification</h4>

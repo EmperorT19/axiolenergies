@@ -147,10 +147,6 @@ export class AxiolDataService {
     { stepNumber: 5, stage: 'REORDER', description: 'Planned replenishment and stock management', icon: 'fa-truck-droplet' }
   ];
 
-  get fuelSteps(): FuelArchitectureStep[] {
-    return this.fuelArchitecture;
-  }
-
   readonly engineeringScope: EngineeringScopeItem[] = [
     { category: 'Tank Systems', details: 'Sizing, foundations, bunding, vents and level controls.', icon: 'fa-cubes' },
     { category: 'Pumps and Piping', details: 'Duty selection, filters, valves, hoses and transfer lines.', icon: 'fa-code-branch' },

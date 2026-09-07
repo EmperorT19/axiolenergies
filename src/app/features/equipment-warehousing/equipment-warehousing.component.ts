@@ -1,12 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { AxiolDataService } from '../../core/services/axiol-data.service';
 
 @Component({
   selector: 'app-equipment-warehousing',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './equipment-warehousing.component.html',
   styleUrls: ['./equipment-warehousing.component.scss']
 })
