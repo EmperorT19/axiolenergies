@@ -14,18 +14,30 @@
       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
       
       <!-- Pillars Mega Menu with Picture Room -->
-      <div class="nav-mega-item">
-        <a routerLink="/overview" routerLinkActive="active" class="mega-trigger">
-          Infrastructure Pillars <i class="fa-solid fa-chevron-down nav-arrow"></i>
-        </a>
+      <div 
+        class="nav-mega-item" 
+        [class.open]="megaMenuOpen"
+        (mouseenter)="onMegaMouseEnter()" 
+        (mouseleave)="onMegaMouseLeave()">
+        
+        <button 
+          type="button" 
+          class="mega-trigger"
+          [class.active]="isPillarsActive()"
+          [class.menu-open]="megaMenuOpen"
+          (click)="toggleMegaMenu($event)"
+          [attr.aria-expanded]="megaMenuOpen"
+          aria-haspopup="true">
+          Infrastructure Pillars <i class="fa-solid fa-chevron-down nav-arrow" [class.rotate]="megaMenuOpen"></i>
+        </button>
 
         <!-- Picture Preview Mega Dropdown -->
-        <div class="mega-dropdown-panel">
+        <div class="mega-dropdown-panel" role="menu">
           <div class="mega-grid">
             
-            <a routerLink="/oil-gas" class="mega-photo-card">
+            <a routerLink="/oil-gas" class="mega-photo-card" (click)="closeMegaMenu()">
               <div class="m-img-wrap">
-                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=400&q=80" alt="Oil & Gas">
+                <img src="https://res.cloudinary.com/duwyaucf1/image/upload/v1788765614/jimmy-desplanques-URWS5R20FEM-unsplash_oil_gfxyah.jpg" alt="Oil & Gas">
               </div>
               <div class="m-txt">
                 <span class="m-cat">PETROLEUM</span>
@@ -33,9 +45,9 @@
               </div>
             </a>
 
-            <a routerLink="/renewable-energy" class="mega-photo-card">
+            <a routerLink="/renewable-energy" class="mega-photo-card" (click)="closeMegaMenu()">
               <div class="m-img-wrap">
-                <img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=400&q=80" alt="Renewable Energy">
+                <img src="https://res.cloudinary.com/duwyaucf1/image/upload/v1788867030/ari-ara-hXsM4WTl46M-unsplash_cluzwb.jpg" alt="Renewables & Storage">
               </div>
               <div class="m-txt">
                 <span class="m-cat">SOLAR & BESS</span>
@@ -43,7 +55,7 @@
               </div>
             </a>
 
-            <a routerLink="/electrical-infra" class="mega-photo-card">
+            <a routerLink="/electrical-infra" class="mega-photo-card" (click)="closeMegaMenu()">
               <div class="m-img-wrap">
                 <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=400&q=80" alt="Electrical Infra">
               </div>
@@ -53,9 +65,9 @@
               </div>
             </a>
 
-            <a routerLink="/training-capacity" class="mega-photo-card">
+            <a routerLink="/training-capacity" class="mega-photo-card" (click)="closeMegaMenu()">
               <div class="m-img-wrap">
-                <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=400&q=80" alt="Capacity Building">
+                <img src="https://res.cloudinary.com/duwyaucf1/image/upload/v1788765614/iwaria-inc-Q6KzWe-lq9Y-unsplash_training_nsd6hu.jpg" alt="Capacity Building">
               </div>
               <div class="m-txt">
                 <span class="m-cat">HUMAN CAPITAL</span>
@@ -63,6 +75,17 @@
               </div>
             </a>
 
+          </div>
+
+          <!-- Bottom bar linking to Corporate Overview -->
+          <div class="mega-footer">
+            <span class="footer-note">
+              <i class="fa-solid fa-shield-halved"></i> Tier-1 End-to-End Delivery
+            </span>
+            <a routerLink="/overview" class="mega-overview-btn" (click)="closeMegaMenu()">
+              <span>Explore Corporate Overview</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -101,16 +124,20 @@
       
       <!-- Mobile Pillar Cards -->
       <a routerLink="/oil-gas" (click)="closeMobileMenu()" class="nav-photo-link">
-        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=150&q=80" alt="Oil Gas" class="thumb-img">
+        <img src="https://res.cloudinary.com/duwyaucf1/image/upload/v1788765614/jimmy-desplanques-URWS5R20FEM-unsplash_oil_gfxyah.jpg" alt="Oil Gas" class="thumb-img">
         <span>Oil & Gas Infrastructure</span>
       </a>
       <a routerLink="/renewable-energy" (click)="closeMobileMenu()" class="nav-photo-link">
-        <img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=150&q=80" alt="Renewable" class="thumb-img">
+        <img src="https://res.cloudinary.com/duwyaucf1/image/upload/v1788867030/ari-ara-hXsM4WTl46M-unsplash_cluzwb.jpg" alt="Renewables" class="thumb-img">
         <span>Renewables & Storage</span>
       </a>
       <a routerLink="/electrical-infra" (click)="closeMobileMenu()" class="nav-photo-link">
         <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=150&q=80" alt="Substation" class="thumb-img">
         <span>Electrical Infrastructure</span>
+      </a>
+      <a routerLink="/training-capacity" (click)="closeMobileMenu()" class="nav-photo-link">
+        <img src="https://res.cloudinary.com/duwyaucf1/image/upload/v1788765614/iwaria-inc-Q6KzWe-lq9Y-unsplash_training_nsd6hu.jpg" alt="Training" class="thumb-img">
+        <span>Training & Capacity</span>
       </a>
       
       <a routerLink="/epc-projects" (click)="closeMobileMenu()"><i class="fa-solid fa-screwdriver-wrench"></i> Project EPC</a>
