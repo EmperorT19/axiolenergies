@@ -541,79 +541,428 @@
       }
     }
 
-    /* Section 04 Value Chain Stepper */
-    .value-chain-stepper {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+    /* ==========================================================================
+       SECTION 04: VALUE CHAIN & LIFECYCLE PIPELINE (ENHANCED VISUAL)
+       ========================================================================== */
+    &.lifecycle-section, .lifecycle-section {
+      /* Pipeline Track Ribbon */
+      .lifecycle-pipeline-track {
+        position: relative;
+        margin-bottom: 2.2rem;
+        padding: 0.5rem 0;
 
-      .step-card-item {
-        background: var(--bg-monolith-card);
-        border: 1px solid var(--border-editorial);
-        border-radius: var(--radius-md);
-        padding: 1.2rem 1.4rem;
-        display: flex;
-        align-items: flex-start;
-        gap: 1.2rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
+        .track-line {
+          position: absolute;
+          top: 26px;
+          left: 6%;
+          right: 6%;
+          height: 3px;
+          background: linear-gradient(90deg, rgba(98, 184, 41, 0.35) 0%, var(--accent-sprout) 50%, rgba(12, 59, 46, 0.25) 100%);
+          z-index: 1;
+          border-radius: var(--radius-full);
 
-        @media (max-width: 576px) {
-          flex-direction: column;
-          gap: 0.8rem;
+          @media (max-width: 640px) {
+            display: none;
+          }
         }
 
-        .s-left {
-          display: flex;
-          align-items: center;
-          gap: 0.8rem;
+        .pipeline-nodes {
+          position: relative;
+          z-index: 2;
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          gap: 0.5rem;
 
-          .s-num {
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 1rem;
-            color: var(--accent-sprout);
+          @media (max-width: 640px) {
+            display: flex;
+            overflow-x: auto;
+            padding-bottom: 0.8rem;
+            gap: 0.75rem;
+            scrollbar-width: thin;
           }
 
-          .s-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: var(--radius-sm);
-            background: var(--accent-sand);
-            color: var(--accent-sprout);
+          .pipeline-node-btn {
+            background: transparent;
+            border: none;
+            padding: 0.4rem 0.2rem;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            text-align: center;
+            transition: all 0.25s ease;
+
+            @media (max-width: 640px) {
+              flex: 0 0 auto;
+              min-width: 80px;
+            }
+
+            .node-indicator {
+              width: 44px;
+              height: 44px;
+              border-radius: var(--radius-full);
+              background: var(--bg-monolith-card);
+              border: 2px solid rgba(12, 59, 46, 0.2);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 2px 8px rgba(12, 59, 46, 0.08);
+              transition: all 0.3s ease;
+
+              .node-num {
+                font-family: var(--font-heading);
+                font-weight: 800;
+                font-size: 0.85rem;
+                color: var(--text-main);
+                transition: color 0.3s ease;
+              }
+            }
+
+            .node-title {
+              font-family: var(--font-heading);
+              font-size: 0.74rem;
+              font-weight: 700;
+              letter-spacing: 0.04em;
+              color: var(--text-sub);
+              transition: color 0.3s ease;
+              white-space: nowrap;
+            }
+
+            &:hover, &.active {
+              .node-indicator {
+                background: var(--accent-sprout);
+                border-color: var(--accent-sprout);
+                box-shadow: 0 0 0 4px rgba(98, 184, 41, 0.25);
+                transform: translateY(-2px);
+
+                .node-num {
+                  color: #FFFFFF;
+                }
+              }
+
+              .node-title {
+                color: var(--accent-forest);
+                font-weight: 800;
+              }
+            }
+          }
+        }
+      }
+
+      /* 6-Stage Process Cards Grid */
+      .lifecycle-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr;
+          gap: 1.2rem;
+        }
+
+        .lifecycle-card {
+          position: relative;
+          background: var(--bg-monolith-card);
+          border: 1px solid var(--border-editorial);
+          border-radius: var(--radius-md);
+          padding: 1.75rem 1.6rem;
+          display: flex;
+          flex-direction: column;
+          box-shadow: var(--shadow-card);
+          cursor: pointer;
+          overflow: hidden;
+          transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+          /* Large Watermark Number */
+          .watermark-num {
+            position: absolute;
+            top: -10px;
+            right: 14px;
+            font-family: var(--font-heading);
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1;
+            color: var(--accent-forest);
+            opacity: 0.05;
+            user-select: none;
+            pointer-events: none;
+            transition: all 0.3s ease;
+          }
+
+          .card-meta-row {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.05rem;
+            justify-content: space-between;
+            margin-bottom: 1.2rem;
+            position: relative;
+            z-index: 2;
+
+            .phase-badges {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              flex-wrap: wrap;
+
+              .phase-pill {
+                background: var(--accent-sand);
+                color: var(--accent-forest);
+                font-family: var(--font-heading);
+                font-size: 0.72rem;
+                font-weight: 800;
+                letter-spacing: 0.06em;
+                padding: 0.25rem 0.65rem;
+                border-radius: var(--radius-full);
+                border: 1px solid rgba(98, 184, 41, 0.25);
+              }
+
+              .action-pill {
+                background: rgba(12, 59, 46, 0.06);
+                color: var(--accent-sprout);
+                font-size: 0.72rem;
+                font-weight: 700;
+                letter-spacing: 0.04em;
+                padding: 0.25rem 0.6rem;
+                border-radius: var(--radius-full);
+                text-transform: uppercase;
+              }
+            }
+
+            .icon-avatar {
+              width: 44px;
+              height: 44px;
+              flex-shrink: 0;
+              border-radius: var(--radius-sm);
+              background: var(--accent-sand);
+              border: 1px solid rgba(98, 184, 41, 0.3);
+              color: var(--accent-forest);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1.2rem;
+              transition: all 0.3s ease;
+            }
+          }
+
+          .card-content {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 1.2rem;
+
+            .card-title {
+              font-size: 1.25rem;
+              font-weight: 800;
+              margin-bottom: 0.45rem;
+              color: var(--text-main);
+              letter-spacing: -0.01em;
+            }
+
+            .card-desc {
+              font-size: 0.9rem;
+              color: var(--text-sub);
+              line-height: 1.6;
+              margin: 0;
+            }
+          }
+
+          /* Deliverables tags */
+          .deliverables-stack {
+            position: relative;
+            z-index: 2;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(12, 59, 46, 0.08);
+            margin-bottom: 1.2rem;
+
+            .deliv-heading {
+              display: block;
+              font-size: 0.7rem;
+              font-weight: 700;
+              text-transform: uppercase;
+              letter-spacing: 0.08em;
+              color: var(--text-muted);
+              margin-bottom: 0.55rem;
+            }
+
+            .deliv-tags {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.4rem;
+
+              .deliv-chip {
+                background: var(--bg-monolith-main);
+                border: 1px solid rgba(12, 59, 46, 0.12);
+                padding: 0.25rem 0.6rem;
+                border-radius: var(--radius-sm);
+                font-size: 0.75rem;
+                font-weight: 600;
+                color: var(--text-main);
+                display: inline-flex;
+                align-items: center;
+                gap: 0.35rem;
+
+                i {
+                  font-size: 0.65rem;
+                  color: var(--accent-sprout);
+                }
+              }
+            }
+          }
+
+          /* Progress Indicator in Card */
+          .card-flow-footer {
+            position: relative;
+            z-index: 2;
+
+            .flow-progress-bar {
+              height: 4px;
+              background: rgba(12, 59, 46, 0.08);
+              border-radius: var(--radius-full);
+              overflow: hidden;
+              margin-bottom: 0.6rem;
+
+              .flow-fill {
+                height: 100%;
+                background: linear-gradient(90deg, var(--accent-forest) 0%, var(--accent-sprout) 100%);
+                border-radius: var(--radius-full);
+                transition: width 0.4s ease;
+              }
+            }
+
+            .flow-labels {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              font-size: 0.74rem;
+
+              .flow-step-label {
+                font-weight: 700;
+                color: var(--text-muted);
+                letter-spacing: 0.04em;
+              }
+
+              .flow-next-label {
+                font-weight: 600;
+                color: var(--accent-forest);
+                display: inline-flex;
+                align-items: center;
+                gap: 0.35rem;
+
+                i {
+                  font-size: 0.7rem;
+                  color: var(--accent-sprout);
+                }
+
+                &.ready {
+                  color: var(--accent-sprout);
+                  font-weight: 700;
+                }
+              }
+            }
+          }
+
+          &:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-sprout);
+            box-shadow: var(--shadow-hover);
+
+            .watermark-num {
+              opacity: 0.12;
+              color: var(--accent-sprout);
+            }
+
+            .icon-avatar {
+              background: var(--accent-sprout);
+              color: #FFFFFF;
+              border-color: var(--accent-sprout);
+              transform: scale(1.06);
+            }
+          }
+
+          &.active {
+            border-color: var(--accent-sprout);
+            box-shadow: 0 0 0 2px rgba(98, 184, 41, 0.25), var(--shadow-hover);
+
+            .icon-avatar {
+              background: var(--accent-sprout);
+              color: #FFFFFF;
+            }
           }
         }
+      }
 
-        .s-right {
-          h4 {
-            font-size: 1.05rem;
-            margin-bottom: 0.2rem;
-          }
+      /* Turnkey Assurance Banner */
+      .turnkey-assurance-banner {
+        background: linear-gradient(135deg, #0C3B2E 0%, #08281F 100%);
+        border-radius: var(--radius-md);
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1.8rem;
+        box-shadow: 0 10px 30px rgba(12, 59, 46, 0.18);
+        border: 1px solid rgba(98, 184, 41, 0.2);
 
-          .s-action {
-            font-size: 0.8rem;
+        @media (max-width: 768px) {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 1.5rem;
+          gap: 1.2rem;
+        }
+
+        .assurance-icon-box {
+          width: 58px;
+          height: 58px;
+          flex-shrink: 0;
+          border-radius: var(--radius-md);
+          background: rgba(98, 184, 41, 0.18);
+          border: 1px solid rgba(98, 184, 41, 0.4);
+          color: var(--accent-sprout);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.6rem;
+        }
+
+        .assurance-text {
+          flex: 1;
+
+          .assurance-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
             color: var(--accent-sprout);
-            font-weight: 700;
+            margin-bottom: 0.35rem;
           }
 
-          .s-desc {
-            font-size: 0.92rem;
-            color: var(--text-sub);
-            line-height: 1.6;
-            margin-top: 0.6rem;
+          h4 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 0.4rem;
+            line-height: 1.3;
+          }
+
+          p {
+            font-size: 0.88rem;
+            color: #D3E2DB;
+            line-height: 1.55;
+            margin: 0;
           }
         }
 
-        &:hover, &.active {
-          border-color: var(--accent-sprout);
+        .assurance-action {
+          flex-shrink: 0;
 
-          .s-left .s-icon {
-            background: var(--accent-sprout);
-            color: #FFFFFF;
+          @media (max-width: 768px) {
+            width: 100%;
+
+            a {
+              width: 100%;
+              text-align: center;
+              justify-content: center;
+            }
           }
         }
       }

@@ -14,6 +14,7 @@ export interface ValueChainStage {
   action: string;
   description: string;
   icon: string;
+  deliverables?: string[];
 }
 
 export interface OperatingPrinciple {

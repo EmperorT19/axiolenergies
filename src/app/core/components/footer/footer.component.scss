@@ -30,38 +30,25 @@
 
   .footer-brand-col {
     .brand-logo {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.4rem;
       display: inline-block;
+      text-decoration: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
 
-      .footer-logo-card {
-        background: #FFFFFF;
-        padding: 0;
-        width: 280px;
-        height: 84px;
-        overflow: hidden;
-        border-radius: var(--radius-sm);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      &:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+      }
+
+      .brand-logo-img {
+        display: block;
+        width: 220px;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
 
         @media (max-width: 576px) {
-          width: 210px;
-          height: 64px;
-        }
-
-        &:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(82, 183, 136, 0.3);
-        }
-
-        .brand-logo-img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-          transform: scale(2.35);
+          width: 180px;
         }
       }
     }

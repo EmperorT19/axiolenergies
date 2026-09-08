@@ -124,12 +124,54 @@ export class AxiolDataService {
   ];
 
   readonly valueChainStages: ValueChainStage[] = [
-    { step: '01', title: 'DEVELOP', action: 'Originate', description: 'Feasibility, site screening, land control, permits, stakeholder coordination and bankability.', icon: 'fa-compass-drafting' },
-    { step: '02', title: 'ENGINEER', action: 'Engineer', description: 'FEED, detailed design, load flow, short circuit, protection and construction specs.', icon: 'fa-microchip' },
-    { step: '03', title: 'PROCURE', action: 'Source', description: 'Bankable technology, top tier OEMs, quality assurance, global supply chain and logistics.', icon: 'fa-boxes-packing' },
-    { step: '04', title: 'CONSTRUCT', action: 'Build', description: 'Civil, mechanical and electrical execution, site HSEQ, quality control and field management.', icon: 'fa-screwdriver-wrench' },
-    { step: '05', title: 'COMMISSION', action: 'Test and Handover', description: 'Testing, energisation, grid compliance, performance verification and asset handover.', icon: 'fa-square-check' },
-    { step: '06', title: 'OPERATE', action: 'Optimise', description: 'Preventive operation maintenance, continuous monitoring, spare parts inventory and lasting asset optimization.', icon: 'fa-chart-line' }
+    { 
+      step: '01', 
+      title: 'DEVELOP', 
+      action: 'Originate', 
+      description: 'Feasibility, site screening, land control, permits, stakeholder coordination and bankability.', 
+      icon: 'fa-compass-drafting',
+      deliverables: ['Feasibility Studies', 'Land & Site Control', 'Environmental Permits', 'Bankability Structuring']
+    },
+    { 
+      step: '02', 
+      title: 'ENGINEER', 
+      action: 'Engineer', 
+      description: 'FEED, detailed design, load flow, short circuit, protection and construction specs.', 
+      icon: 'fa-microchip',
+      deliverables: ['FEED & Detailed Design', 'Load Flow & Short Circuit', 'Protection Coordination', 'Procurement Specs']
+    },
+    { 
+      step: '03', 
+      title: 'PROCURE', 
+      action: 'Source', 
+      description: 'Bankable technology, top tier OEMs, quality assurance, global supply chain and logistics.', 
+      icon: 'fa-boxes-packing',
+      deliverables: ['Tier-1 OEM Sourcing', 'Global Freight Logistics', 'Factory Testing (FAT)', 'Bankable Warranties']
+    },
+    { 
+      step: '04', 
+      title: 'CONSTRUCT', 
+      action: 'Build', 
+      description: 'Civil, mechanical and electrical execution, site HSEQ, quality control and field management.', 
+      icon: 'fa-screwdriver-wrench',
+      deliverables: ['Civil & Structural EPC', 'Electrical Balance of Plant', 'Site HSEQ Compliance', 'Field Supervision']
+    },
+    { 
+      step: '05', 
+      title: 'COMMISSION', 
+      action: 'Test and Handover', 
+      description: 'Testing, energisation, grid compliance, performance verification and asset handover.', 
+      icon: 'fa-square-check',
+      deliverables: ['Cold & Hot Energisation', 'Grid Code Compliance', 'Performance Ratio Tests', 'COD Asset Handover']
+    },
+    { 
+      step: '06', 
+      title: 'OPERATE', 
+      action: 'Optimise', 
+      description: 'Preventive operation maintenance, continuous monitoring, spare parts inventory and lasting asset optimization.', 
+      icon: 'fa-chart-line',
+      deliverables: ['24/7 Monitoring & SCADA', 'Preventive Maintenance', 'Spare Parts Logistics', 'Yield Optimization']
+    }
   ];
 
   readonly operatingPrinciples: OperatingPrinciple[] = [

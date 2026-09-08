@@ -242,7 +242,7 @@
         </section>
 
         <!-- SECTION 04: VALUE CHAIN INFRASTRUCTURE STEPPER -->
-        <section id="value-chain" class="canvas-section">
+        <section id="turnkey-pipeline" class="canvas-section lifecycle-section">
           <div class="section-badge-row">
             <span class="axiol-badge forest"><i class="fa-solid fa-diagram-project"></i> Section 04</span>
             <span class="section-title-sm">Turnkey Execution Model</span>
@@ -251,19 +251,106 @@
           <h2 class="canvas-heading">END-TO-END PROJECT LIFECYCLE</h2>
           <p class="canvas-sub">From feasibility screening through to long-term asset management.</p>
 
-          <div class="stepper-cards-grid">
-            @for (step of dataService.valueChainStages; track step.step) {
-              <div class="step-card">
-                <div class="step-header">
-                  <span class="step-num">{{ step.step }}</span>
-                  <div class="step-icon-badge">
+          <!-- Interactive Lifecycle Pipeline Bar -->
+          <div class="lifecycle-pipeline-track">
+            <div class="track-line"></div>
+            <div class="pipeline-nodes">
+              @for (stage of dataService.valueChainStages; track stage.step; let idx = $index) {
+                <button 
+                  type="button"
+                  class="pipeline-node-btn" 
+                  [class.active]="activeStageIndex === idx"
+                  (click)="setActiveStage(idx)"
+                  [attr.aria-label]="'Select phase ' + stage.step + ' ' + stage.title">
+                  <span class="node-indicator">
+                    <span class="node-num">{{ stage.step }}</span>
+                  </span>
+                  <span class="node-title">{{ stage.title }}</span>
+                </button>
+              }
+            </div>
+          </div>
+
+          <!-- 6-Stage Turnkey Process Cards Grid -->
+          <div class="lifecycle-cards-grid">
+            @for (step of dataService.valueChainStages; track step.step; let idx = $index) {
+              <div 
+                class="lifecycle-card" 
+                [class.active]="activeStageIndex === idx"
+                (click)="setActiveStage(idx)">
+                
+                <!-- Watermark Number -->
+                <div class="watermark-num">{{ step.step }}</div>
+
+                <!-- Top Header Row -->
+                <div class="card-meta-row">
+                  <div class="phase-badges">
+                    <span class="phase-pill">PHASE {{ step.step }}</span>
+                    <span class="action-pill">{{ step.action }}</span>
+                  </div>
+                  <div class="icon-avatar">
                     <i class="fa-solid" [ngClass]="step.icon"></i>
                   </div>
                 </div>
-                <h3>{{ step.title }}</h3>
-                <p>{{ step.description }}</p>
+
+                <!-- Title & Body -->
+                <div class="card-content">
+                  <h3 class="card-title">{{ step.title }}</h3>
+                  <p class="card-desc">{{ step.description }}</p>
+                </div>
+
+                <!-- Deliverable Tags -->
+                @if (step.deliverables && step.deliverables.length) {
+                  <div class="deliverables-stack">
+                    <span class="deliv-heading">Scope & Deliverables</span>
+                    <div class="deliv-tags">
+                      @for (item of step.deliverables; track item) {
+                        <span class="deliv-chip">
+                          <i class="fa-solid fa-check"></i> {{ item }}
+                        </span>
+                      }
+                    </div>
+                  </div>
+                }
+
+                <!-- Flow Progression Footer -->
+                <div class="card-flow-footer">
+                  <div class="flow-progress-bar">
+                    <div class="flow-fill" [style.width.%]="((idx + 1) / 6) * 100"></div>
+                  </div>
+                  <div class="flow-labels">
+                    <span class="flow-step-label">Stage {{ step.step }} / 06</span>
+                    @if (idx < 5) {
+                      <span class="flow-next-label">
+                        Next: {{ dataService.valueChainStages[idx + 1].title }} <i class="fa-solid fa-arrow-right"></i>
+                      </span>
+                    } @else {
+                      <span class="flow-next-label ready">
+                        Handover & Yield Optimization <i class="fa-solid fa-circle-check"></i>
+                      </span>
+                    }
+                  </div>
+                </div>
+
               </div>
             }
+          </div>
+
+          <!-- Turnkey Guarantee Callout Banner -->
+          <div class="turnkey-assurance-banner">
+            <div class="assurance-icon-box">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="assurance-text">
+              <span class="assurance-tag">SINGLE-POINT ACCOUNTABILITY</span>
+              <h4>Guaranteed Turnkey EPC & Long-Term Asset Integrity</h4>
+              <p>Axiol integrates engineering, procurement, construction, and asset O&M under a unified structure—eliminating interface risk, preventing cost overruns, and guaranteeing lifecycle output across African energy markets.</p>
+            </div>
+            <div class="assurance-action">
+              <a routerLink="/portfolio-contact" class="axiol-btn btn-sprout">
+                Evaluate Your Project <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
           </div>
         </section>
 
