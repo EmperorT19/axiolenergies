@@ -32,8 +32,4 @@ export class HomeComponent {
     this.activeStageIndex = (this.activeStageIndex - 1 + this.dataService.valueChainStages.length) % this.dataService.valueChainStages.length;
   }
 
-  getStageAngle(index: number): number {
-    // Position 6 nodes evenly around a 360deg circle starting from top (-90deg)
-    return -90 + (index * 60);
-  }
 }
