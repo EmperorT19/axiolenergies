@@ -537,54 +537,63 @@
         margin-bottom: 2.5rem;
       }
 
-      /* Mobile Quick Touch Stage Bar */
+      /* Mobile Quick Touch Stage Bar (3x2 Clean Grid for 100% Visibility on Mobile) */
       .mobile-stage-bar {
         display: none;
         gap: 0.45rem;
-        overflow-x: auto;
-        padding: 0.2rem 0.5rem 0.6rem 0.5rem;
         margin-bottom: 1.2rem;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        scroll-snap-type: x mandatory;
-        scroll-padding: 0.5rem;
-
-        &::-webkit-scrollbar { display: none; }
+        width: 100%;
 
         @media (max-width: 992px) {
-          display: flex;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 0.4rem;
+        }
+
+        @media (max-width: 360px) {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.35rem;
         }
 
         .m-stage-tab {
-          scroll-snap-align: start;
           appearance: none;
           -webkit-appearance: none;
           background: var(--bg-monolith-card);
           border: 1px solid var(--border-editorial);
           border-radius: var(--radius-full);
-          padding: 0.45rem 0.85rem;
+          padding: 0.42rem 0.4rem;
           font-family: var(--font-heading);
-          font-size: 0.78rem;
+          font-size: clamp(0.62rem, 2.4vw, 0.75rem);
           font-weight: 700;
           color: var(--text-sub);
           white-space: nowrap;
           cursor: pointer;
           display: flex;
           align-items: center;
-          gap: 0.4rem;
-          flex-shrink: 0;
+          justify-content: center;
+          gap: 0.3rem;
+          width: 100%;
+          box-sizing: border-box;
           transition: all 0.25s ease;
 
           .m-num {
-            font-size: 0.68rem;
+            font-size: 0.65rem;
             color: var(--accent-sprout);
             font-weight: 800;
+            flex-shrink: 0;
+          }
+
+          .m-name {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
           }
 
           &:hover, &.active {
             background: var(--accent-sprout);
             border-color: var(--accent-sprout);
             color: #FFFFFF;
+            box-shadow: 0 4px 12px rgba(98, 184, 41, 0.25);
 
             .m-num { color: #FFFFFF; }
           }
